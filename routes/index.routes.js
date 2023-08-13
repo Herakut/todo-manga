@@ -32,4 +32,8 @@ router.get("/profile", (req, res, next) => {
   res.render('profile')
 })
 
+// Añadimos las rutas de auth para poder usarlas
+const authRouter = require("./auth.routes.js");
+router.use("/auth", authRouter)
+
 module.exports = router;

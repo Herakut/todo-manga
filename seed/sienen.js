@@ -163,3 +163,17 @@ const seinen=[
 
 
 ]
+const mongoose = require("mongoose");
+const Manga = require("../models/Manga.model");
+
+mongoose
+  .connect("mongodb://127.0.0.1:27017/todo-manga")
+  .then(() => {
+    return Manga.insertMany(seinen)
+  })
+  .then(() => {
+    console.log("Información insertada en la base de datos.");
+  })
+  .catch((error) => {
+    console.log(error);
+  });

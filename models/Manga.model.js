@@ -1,9 +1,9 @@
-const { Schema, model } = require("mongoose");
+// const { Schema, model } = require("mongoose");
 
+const mongoose = require("mongoose")
 
-const mangaSchema = new Schema(
-  {
-    title: {
+const mangaSchema = new mongoose.Schema({
+    title: { 
       type: String,
       required: true,
     },
@@ -25,8 +25,8 @@ const mangaSchema = new Schema(
     },
     genre: {
       type: String,
-      enum: ["action", "fantasy", "horror"],
-      default: "action"
+      // enum: ["action", "fantasy", "horror"],
+      // default: "action"
     },
     image: {
       type: String,
@@ -39,6 +39,6 @@ const mangaSchema = new Schema(
   }
 );
 
-const Manga = model("Manga", mangaSchema);
+const Manga = mongoose.model("Manga", mangaSchema);
 
 module.exports = Manga;
