@@ -1,10 +1,10 @@
-const { Schema, model, Types } = require("mongoose");
+const { Schema, model} = require("mongoose");
 
 
 const commentSchema = new Schema(
   {
-    user: { type: Types.ObjectId, ref: 'User' },
-    manga: { type: Types.ObjectId, ref: 'Manga' },
+    user: { type: Schema.Types.ObjectId, ref: 'User' },
+    manga: { type: Schema.Types.ObjectId, ref: 'Manga' },
     text: String
   },
   {

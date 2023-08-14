@@ -11,7 +11,7 @@ const mangaSchema = new mongoose.Schema({
       type: Number,
       required: true,
     },
-    collection: {
+    collectionType: {
       type: String,
       required: true
     },
