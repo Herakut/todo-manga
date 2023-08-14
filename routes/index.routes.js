@@ -33,20 +33,68 @@ router.get("/collections", (req, res, next) => {
 
 
 
-
+//ruta para todos los mangas
 router.get("/mangas",(req, res, next) =>{
-  Manga.find(mangas)
+  Manga.find()
   .select({title:1})
-  .then(()=>{
-
+  .then((manga)=>{
+  res.render("mangas.hbs", {
+    mangaTitle: manga
+  })
   })
   .catch((error)=>{}
-  )
-
-
-
-  res.render("mangas")
+  )  
 })
+
+
+
+
+
+
+
+
+
+//ruta para la vista de un tomo con sus propiedades, TOMO
+
+// router.get("/mangas/:mangaId", (req, res, next)=>{
+//   let mangaId = req.params.mangaId
+
+//   console.log("pokemonid")
+//   Manga.findById(mangaId)
+//   .then((response)=>{
+//     console.log(response)
+//   })
+
+// .catch((error)=>{
+// next(error)
+// })
+// res.render("tomo.hbs")
+// )
+
+router.get("/mangas/:mandaId",(req, res, next)=>{
+  let mangaId=req.params.pokemonId
+
+  Manga.findById(mangaId)
+  .then((reponse)=>{
+    console.log(response)
+  })
+  .catch((error)=>{
+    next(error)
+  })
+
+  res.render("tomo.hbs")
+})
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -57,6 +105,12 @@ router.get("/mangas",(req, res, next) =>{
 router.get("/profile", (req, res, next) => {
   res.render('profile')
 })
+
+
+
+
+
+
 
 //
 
