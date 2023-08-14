@@ -73,8 +73,9 @@ router.get("/mangas/:mangaId", (req, res, next) => {
 
 //ruta del buscador
 router.get("/search", (req, res, next) => {
-  console.log("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",req.query)
-  Manga.findOne({collectionType: req.query.search})
+  console.log(req.query)
+  Manga.find({ title: { $regex: req.query.search} })
+
   .then((foundManga)=>{
     console.log(foundManga)
     res.render("tomo-details.hbs",{
