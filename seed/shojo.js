@@ -1,4 +1,4 @@
-const ultraManiac=[
+const shojo=[
     {
         title:"Ultra Maniac. Los trucos de Nina",
         author: "Wataru Yoshizumi",
@@ -48,8 +48,21 @@ const ultraManiac=[
         author:"Wataru Yoshizumi",
         genre:"Shojo",
         image:"https://www.panini.es/media/catalog/product/cache/a87cfc69c89e7921deea3a8e066ac416/s/u/sultr005_0.jpg",
-    },
-    
+    },  
         
     
 ]
+const mongoose = require("mongoose");
+const Manga = require("../models/Manga.model");
+
+mongoose
+  .connect("mongodb://127.0.0.1:27017/todo-manga")
+  .then(() => {
+    return Manga.insertMany(shojo)
+  })
+  .then(() => {
+    console.log("Información insertada en la base de datos.");
+  })
+  .catch((error) => {
+    console.log(error);
+  });

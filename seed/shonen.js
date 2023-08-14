@@ -306,3 +306,16 @@ const shonen=[
         image:"https://m.media-amazon.com/images/I/51GvntYXW2L._SX343_BO1,204,203,200_.jpg",
     },
 ]
+const mongoose = require("mongoose");
+const Manga = require("../models/Manga.model");
+mongoose
+  .connect("mongodb://127.0.0.1:27017/todo-manga")
+  .then(() => {
+    return Manga.insertMany(shonen)
+  })
+  .then(() => {
+    console.log("Información insertada en la base de datos.");
+  })
+  .catch((error) => {
+    console.log(error);
+  });
