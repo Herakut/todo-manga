@@ -11,32 +11,11 @@ router.get("/collections", (req, res, next) => {
   res.render("collections");
 });
 
-// router.get("/mangas", async (req, res, next) => {
-
-//   try {
-//     // const data = await Manga.find()
-
-//     // console.log(data)
-
-//     res.render('mangas')
-
-//     // res.render('mangas', {mangas: data})
-//   } catch (error) {
-//     next(error)
-//   }
-
-// })
 
 //ruta para todos los mangas
 router.get("/mangas", (req, res, next) => {
   Manga.find()
-    .select({ title: 1 },{})
-    
-
-
-
-
-
+    .select({ title: 1, image: 1 })
     
     .then((response) => {
       console.log(response);
@@ -46,6 +25,32 @@ router.get("/mangas", (req, res, next) => {
     })
     .catch((error) => {});
 });
+
+
+
+//ruta de creacion perfil
+router.get("/create-profile", (req, res, next) => {
+  res.render("/mangas/create-profil.hbs");
+});
+
+//ruta vista perfil
+router.get("/profile", (req, res, next) => {
+  res.render("profile");
+});
+
+//
+
+// Añadimos las rutas de auth para poder usarlas
+const authRouter = require("./auth.routes.js");
+router.use("/auth", authRouter);
+
+
+
+
+
+
+
+
 
 //ruta para monstrar los tomos al clickar
 router.get("/mangas/:mangaId", (req, res, next) => {
@@ -64,26 +69,41 @@ router.get("/mangas/:mangaId", (req, res, next) => {
     });
 });
 
-//ruta de creacion perfil
-router.get("/create-profile", (req, res, next) => {
-  res.render("/mangas/create-profil.hbs");
-});
 
-//ruta vista perfil
-
-router.get("/profile", (req, res, next) => {
-  res.render("profile");
-});
-
-//
-
-// Añadimos las rutas de auth para poder usarlas
-const authRouter = require("./auth.routes.js");
-router.use("/auth", authRouter);
 
 //ruta del buscador
 router.get("/search", (req, res, next) => {
-  res.render("search.hbs");
+  console.log("holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",req.query)
+  Manga.findOne({collectionType: req.query.search})
+  .then((foundManga)=>{
+    console.log(foundManga)
+    res.render("tomo-details.hbs",{
+      foundManga
+    });
+  })
+  .catch((error)=>{
+    next(error)
+  })
+  
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
