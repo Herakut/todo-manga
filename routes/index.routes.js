@@ -1,6 +1,6 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const Manga= require("../models/Manga.model")
+const Manga = require("../models/Manga.model");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
@@ -8,12 +8,8 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/collections", (req, res, next) => {
-  res.render('collections')
-
-  
-})
-
-
+  res.render("collections");
+});
 
 // router.get("/mangas", async (req, res, next) => {
 
@@ -28,100 +24,66 @@ router.get("/collections", (req, res, next) => {
 //   } catch (error) {
 //     next(error)
 //   }
-  
+
 // })
-
-
 
 //ruta para todos los mangas
-router.get("/mangas",(req, res, next) =>{
+router.get("/mangas", (req, res, next) => {
   Manga.find()
-  .select({title:1})
-  .then((manga)=>{
-  res.render("mangas.hbs", {
-    mangaTitle: manga
-  })
-  })
-  .catch((error)=>{}
-  )  
-})
+    .select({ title: 1 },{})
+    
 
 
 
 
 
+    
+    .then((response) => {
+      console.log(response);
+      res.render("mangas.hbs", {
+        mangaTitle: response,
+      });
+    })
+    .catch((error) => {});
+});
 
-
-
-
-//ruta para la vista de un tomo con sus propiedades, TOMO
-
-// router.get("/mangas/:mangaId", (req, res, next)=>{
-//   let mangaId = req.params.mangaId
-
-//   console.log("pokemonid")
-//   Manga.findById(mangaId)
-//   .then((response)=>{
-//     console.log(response)
-//   })
-
-// .catch((error)=>{
-// next(error)
-// })
-// res.render("tomo.hbs")
-// )
-
-router.get("/mangas/:mandaId",(req, res, next)=>{
-  let mangaId=req.params.pokemonId
+//ruta para monstrar los tomos al clickar
+router.get("/mangas/:mangaId", (req, res, next) => {
+  let mangaId = req.params.mangaId;
+  console.log(mangaId);
 
   Manga.findById(mangaId)
-  .then((reponse)=>{
-    console.log(response)
-  })
-  .catch((error)=>{
-    next(error)
-  })
+    .then((response) => {
+      console.log(response);
+      res.render("tomo.hbs", {
+        manga: response,
+      });
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
 
-  res.render("tomo.hbs")
-})
+//ruta de creacion perfil
+router.get("/create-profile", (req, res, next) => {
+  res.render("/mangas/create-profil.hbs");
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//ruta vista perfil
 
 router.get("/profile", (req, res, next) => {
-  res.render('profile')
-})
-
-
-
-
-
-
+  res.render("profile");
+});
 
 //
 
 // Añadimos las rutas de auth para poder usarlas
 const authRouter = require("./auth.routes.js");
-router.use("/auth", authRouter)
+router.use("/auth", authRouter);
 
 //ruta del buscador
-router.get("/search", (req, res, next)=>{
-
-  res.render("search.hbs")
-})
+router.get("/search", (req, res, next) => {
+  res.render("search.hbs");
+});
 
 module.exports = router;

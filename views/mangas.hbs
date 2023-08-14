@@ -1,1 +1,15 @@
-<h1>MANGAS</h1>
+<div>
+    <h1>MANGAS</h1>
+
+    {{#each this.mangaTitle}}
+    <a href="/mangas/{{this._id}}">
+
+        <li>{{this.title}}</li>  
+        <li><img src="{{this.manga.image}}" alt="imagen tomo">  </li>
+    </a>
+    
+    {{/each}}
+</div>
+</div>
+
+
