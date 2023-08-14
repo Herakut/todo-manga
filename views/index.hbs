@@ -1,2 +1,19 @@
-<h1>{{appTitle}} 🚀</h1>
-<p>Welcome Ironhacker!</p>
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <h1><a href="/">LOGO</a></h1>
+  <nav>
+    <a href="/collections">Collections</a>
+    <a href="/mangas">Mangas</a>
+  </nav>
+  <div>
+    {{#if this.isLogged}}
+      <a href="/profile">Profile</a>
+    {{else}}
+      <p><a href="/auth/login">Login</a> | <a href="/auth/signup">Sign Up</a></p>
+    {{/if}}
+  </div>
+
+</div>
+<form action="/search">
+  <input type="text" name="search" />
+  <button>Buscar manga</button>
+</form>

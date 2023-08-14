@@ -1,0 +1,58 @@
+<div>
+
+  <h3>Formulario para subir un manga</h3>
+
+  <form action="/subir-manga" method="post">
+
+    <label for="title">Título</label>
+    <input type="text" name="title">
+
+    <br>
+
+    <label for="numVolume">Número de volumen</label>
+    <input type="text" name="numVolume">
+
+    <br>
+
+    <label for="collectionType">Selecciona una colección</label>
+    <select name="collectionType" id="collectionType">
+        <option value="Dragon Ball">Dragon Ball</option>
+        <option value="Ultra Maniac">Ultra Maniac</option>
+        <option value="Berserk">Berserk</option>
+        <option value="Doraemon">Doraemon</option>
+    </select>
+
+    <br>
+
+    <label for="description">Descripcion</label>
+    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+
+    <br>
+
+    <label for="author">Autor</label>
+    <input type="text" id="author" name="author">
+
+    <br>
+
+    <label for="genre">Selecciona un género</label>
+    <select name="genre" id="genre">
+        <option value="Kodomo">Kodomo</option>
+        <option value="Seinen">Seinen</option>
+        <option value="Shojo">Shojo</option>
+        <option value="Shonen">Shonen</option>
+    </select>
+
+    <br>
+
+    <label for="image">Ruta a la imagen de portada</label>
+    <input type="text" name="image">
+
+    <button>Subir manga</button>
+
+    {{#if this.errorMessage}} 
+      <p>{{this.errorMessage}}</p>
+    {{/if}}
+  </form>
+
+
+</div>
