@@ -1,0 +1,54 @@
+<h1>Estas editando {{this.manga.title}}</h1>
+
+<form action="/{{this.manga._id}}/modificar-manga" method="post">
+    <label for="title">Título</label>
+    <input type="text" name="title" value="{{this.manga.title}}">
+
+    <br>
+
+    <label for="numVolume">Número de volumen</label>
+    <input type="text" name="numVolume" value="{{this.manga.numVolume}}">
+
+    <br>
+
+    <label for="collectionType">Selecciona una colección</label>
+    <select name="collectionType" id="collectionType">
+        <option value="Dragon Ball">Dragon Ball</option>
+        <option value="Ultra Maniac">Ultra Maniac</option>
+        <option value="Berserk">Berserk</option>
+        <option value="Doraemon">Doraemon</option>
+    </select>
+
+    <br>
+
+    <label for="description">Descripcion</label>
+    <textarea name="description" id="description" cols="30" rows="10">{{this.manga.description}}</textarea>
+
+    <br>
+
+    <label for="author">Autor</label>
+    <input type="text" id="author" name="author" value="{{this.manga.author}}">
+
+    <br>
+
+    <label for="genre">Selecciona un género</label>
+    <select name="genre" id="genre">
+        <option value="Kodomo">Kodomo</option>
+        <option value="Seinen">Seinen</option>
+        <option value="Shojo">Shojo</option>
+        <option value="Shonen">Shonen</option>
+    </select>
+
+    <br>
+
+    <label for="image">Ruta a la imagen de portada</label>
+    <input type="text" name="image" value="{{this.manga.image}}">
+
+    <button>Actualizar manga</button>
+
+    {{#if this.errorMessage}} 
+      <p>{{this.errorMessage}}</p>
+    {{/if}}
+
+
+</form>

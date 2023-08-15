@@ -38,6 +38,7 @@ const mangaSchema = new mongoose.Schema({
     timestamps: true
   }
 );
+//Falta relacion de comentarios
 
 const Manga = mongoose.model("Manga", mangaSchema);
 
