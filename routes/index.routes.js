@@ -33,7 +33,9 @@ router.get("/collections", (req, res, next) => {
 router.get("/mangas", (req, res, next) => {
   Manga.find()
     .select({ title: 1, image: 1 })
+    
     .then((response) => {
+      console.log(response);
       res.render("mangas.hbs", {
         mangaTitle: response,
       });
@@ -48,9 +50,11 @@ router.use("/auth", authRouter);
 //ruta para monstrar los tomos al clickar
 router.get("/mangas/:mangaId", (req, res, next) => {
   let mangaId = req.params.mangaId;
+  console.log(mangaId);
 
   Manga.findById(mangaId)
     .then((response) => {
+      console.log(response);
       res.render("tomo.hbs", {
         manga: response,
       });
@@ -62,18 +66,19 @@ router.get("/mangas/:mangaId", (req, res, next) => {
 
 //ruta del buscador
 router.get("/search", (req, res, next) => {
-  console.log(req.query);
-  Manga.find({ title: { $regex: req.query.search } })
+  console.log(req.query)
+  Manga.findOne({ title: { $regex: req.query.search} })
 
-    .then((foundManga) => {
-      console.log(foundManga);
-      res.render("tomo-details.hbs", {
-        foundManga,
-      });
-    })
-    .catch((error) => {
-      next(error);
+  .then((foundManga)=>{
+    console.log("hoilaaaaaaaaaaaaaaaaaa")
+    res.render("tomo-details.hbs",{
+      foundManga
     });
+  })
+  .catch((error)=>{
+    next(error)
+  })
+  
 });
 
 
