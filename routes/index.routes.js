@@ -189,7 +189,7 @@ router.get("/detalles-genero/:generoID", (req, res, next) => {
   let genero = req.params.genre;
   console.log(genero);
 
-  Manga.find(genre)
+  Manga.find({ genre: genero })
     .then((response) => {
       console.log(response);
       res.render("genero-details.hbs", {
