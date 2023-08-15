@@ -21,6 +21,7 @@ router.get("/", (req, res, next) => {
   });
 });
 
+
 router.get("/collections", (req, res, next) => {
   res.render("collections");
 

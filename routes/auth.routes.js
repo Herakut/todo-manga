@@ -9,6 +9,7 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", async (req, res, next) => {
+  console.log(req.body)
   const { username, email, password } = req.body;
 
   if (username === "" || email === "" || password === "") {
@@ -20,8 +21,8 @@ router.post("/signup", async (req, res, next) => {
 
   // Validación para comprobar que la contraseña cumple unos requisitos
   const regexPassword =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\/\\])(?=.{8,})/;
-  if (!regexPassword.test(password)) {
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\/\\])(?=.{8,})/gm;
+  if (regexPassword.test(password) === false) {
     res.status(400).render("auth/signup.hbs", {
       errorMessage:
         "La contraseña debe tener al menos una mayúscula, una minúscula, un caracter especial y tener 8 caracteres o más",
