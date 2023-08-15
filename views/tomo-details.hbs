@@ -3,13 +3,14 @@
    
  
     <div>
-        <h4>{{this.foundManga.title}}</h4>
-        <h4>{{this.foundManga.numVolume}}</h4>
-        <h4>{{this.foundManga.collectionType}}</h4>
-        <h4>{{this.foundManga.description}}</h4>
-        <h4>{{this.foundManga.author}}</h4>
-        <h4>{{this.foundManga.genre}}</h4>
-      <img src="{{this.foundManga.image}}" alt="imagen tomo">
-      
+      {{#each this.foundManga}}
+        <h4>{{this.title}}</h4>
+        <h4>{{this.numVolume}}</h4>
+        <h4>{{this.collectionType}}</h4>
+        <h4>{{this.description}}</h4>
+        <h4>{{this.author}}</h4>
+        <h4>{{this.genre}}</h4>
+      <img src="{{this.image}}" alt="imagen tomo">
+      {{/each}}
     </div>
 </div>
