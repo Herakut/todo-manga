@@ -3,7 +3,7 @@ const router = express.Router();
 const Manga = require("../models/Manga.model");
 
 // Importamos los middlewares para usarlos en las rutas
-const { updateLocals, isLoggedIn } = require('../middlewares/auth.middlewares')
+const { updateLocals, isLoggedIn, isAdmin } = require('../middlewares/auth.middlewares')
 router.use(updateLocals)
 
 /* GET home page */
@@ -11,7 +11,7 @@ router.get("/", (req, res, next) => {
 
   let isLogged = false;
 
-  if (req.session?.user !== undefined) {
+  if (req.session.user !== undefined) {
     isLogged = true
   }
   console.log(isLogged)
@@ -30,7 +30,7 @@ router.get("/collections", (req, res, next) => {
 });
 
 //ruta para todos los mangas
-router.get("/mangas", (req, res, next) => {
+router.get("/mangas",isLoggedIn, (req, res, next) => {
   Manga.find()
     .select({ title: 1, image: 1 })
     
@@ -86,14 +86,14 @@ router.get("/search", (req, res, next) => {
 router.get("/profile", (req, res) => {
 
   let puedeSubirManga = false;
-  if (req.session?.user.role === "admin") {
+  if (req.session.user.role === "admin") {
     puedeSubirManga = true
   }
 
   res.render('profile.hbs', { puedeSubirManga });
 
   // User
-  //   .find({ username: req.session?.user })
+  //   .find({ username: req.session.user })
   //   .then((response) => {
   //     res.render('profile.hbs', { puedeSubirManga, user: response });
   //   })

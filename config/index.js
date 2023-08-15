@@ -13,6 +13,12 @@ const cookieParser = require("cookie-parser");
 // https://www.npmjs.com/package/serve-favicon
 const favicon = require("serve-favicon");
 
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+
+const MONGO_URI =
+process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/basic-auth";
+
 // ℹ️ global package used to `normalize` paths amongst different operating systems
 // https://www.npmjs.com/package/path
 const path = require("path");
@@ -35,5 +41,21 @@ module.exports = (app) => {
   app.use(express.static(path.join(__dirname, "..", "public")));
 
   // Handles access to the favicon
-  app.use(favicon(path.join(__dirname, "..", "public", "images", "favicon.ico")));
+  app.use(
+    favicon(path.join(__dirname, "..", "public", "images", "favicon.ico"))
+  );
+  //Configuracion de la sesion
+  app.use(
+    session({
+      secret: process.env.SESSION_SECRET,
+      saveUninitialized: false, 
+      resave: false, 
+      cookie: {
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+      },
+      store: MongoStore.create({
+        mongoUrl: MONGO_URI,
+      }),
+    })
+  );
 };
