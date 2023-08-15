@@ -101,7 +101,7 @@ router.post("/login", async (req, res, next) => {
 
     req.session.save(() => {
       // Si todo sale bien...
-      res.redirect("/user");
+      res.redirect("/");
     });
   } catch (error) {
     next(error);
