@@ -9,6 +9,7 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", async (req, res, next) => {
+  console.log(req.body)
   const { username, email, password } = req.body;
 
   if (username === "" || email === "" || password === "") {
@@ -19,8 +20,9 @@ router.post("/signup", async (req, res, next) => {
   }
 
   // Validación para comprobar que la contraseña cumple unos requisitos
-  const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\/\\])(?=.{8,})/;
-  if (!regexPassword.test(password)) {
+  const regexPassword =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\/\\])(?=.{8,})/gm;
+  if (regexPassword.test(password) === false) {
     res.status(400).render("auth/signup.hbs", {
       errorMessage:
         "La contraseña debe tener al menos una mayúscula, una minúscula, un caracter especial y tener 8 caracteres o más",
@@ -68,10 +70,7 @@ router.post("/login", async (req, res, next) => {
   console.log(req.body);
   const { email, password } = req.body;
 
-  // Que los campos no esten vacios (opcional)
-
   try {
-    // debemos buscar un usuario con ese correo electronico
     const foundUser = await User.findOne({ email: email });
     console.log("foundUser", foundUser);
     if (foundUser === null) {
@@ -81,9 +80,6 @@ router.post("/login", async (req, res, next) => {
       return; // detener la ejecucion de la ruta
     }
 
-    // Que la contraseña sea la correcta
-    // lo que escribe el usuario en el campo: password
-    // la contraseña cifrada de la DB: foundUser.password
     const isPasswordCorrect = await bcrypt.compare(
       password,
       foundUser.password
@@ -97,30 +93,21 @@ router.post("/login", async (req, res, next) => {
       return; // detener la ejecucion de la ruta
     }
 
-    // aqui ya hemos autenticado al usuario => abrimos una sesion del usuario
-    // ...
-    // con la configuracion de config/index.js ya tenemos acceso a crear sesiones y buscar sesiones
-
-    // crear una sesion activa del usuario
     req.session.user = {
       _id: foundUser._id,
       email: foundUser.email,
       role: foundUser.role,
     };
-    // guardamos en la sesion informacion del usuario que no deberia cambiar
 
-    // el metodo .save() se invoca para esperar que se crea la sesion antes de hacer lo siguiente
     req.session.save(() => {
       // Si todo sale bien...
-      res.redirect("/user");
-      // ! DESPUES DE CREAR LA SESION, TENEMOS ACCESO A REQ.SESSION.USER EN CUALQUIER RUTA DE MI SERVIDOR
+      res.redirect("/");
     });
   } catch (error) {
     next(error);
   }
 });
 
-// GET "/auth/logout" => le permite al usuario cerrar la sesion activa
 router.get("/logout", (req, res, next) => {
   req.session.destroy(() => {
     res.redirect("/");
@@ -131,6 +118,6 @@ router.get("/logout", (req, res, next) => {
 
 
 
-module.exports = router;
+
 
 module.exports = router;

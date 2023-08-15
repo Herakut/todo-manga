@@ -1,6 +1,6 @@
 
 function updateLocals(req, res, next) {
-    if (req.session?.user === undefined) {
+    if (req.session.user === undefined) {
         res.locals.isUserActive = false
     } else {
         res.locals.isUserActive = true
@@ -9,7 +9,7 @@ function updateLocals(req, res, next) {
 }
 
 function isLoggedIn(req, res, next) {
-    if (req.session?.user === undefined) {
+    if (req.session.user === undefined) {
         res.redirect("/auth/login")
     } else {
         next()
@@ -17,7 +17,7 @@ function isLoggedIn(req, res, next) {
 }
 
 function isAdmin(req, res, next) {
-    if (req.session?.user.role === "admin") {
+    if (req.session.user.role === "admin") {
         next();
     } else {
         res.redirect("/auth/login")

@@ -1,12 +1,14 @@
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <h1><a href="/">LOGO</a></h1>
-  <nav>
+  {{!-- <nav>
     <a href="/collections">Collections</a>
     <a href="/mangas">Mangas</a>
   </nav>
   <div>
     {{#if this.isLogged}}
       <a href="/profile">Profile</a>
+      <a href="/auth/logout">Cerrar sesion</a>
+      <a href="/subir-manga">Subir manga</a>
     {{else}}
       <p><a href="/auth/login">Login</a> | <a href="/auth/signup">Sign Up</a></p>
     {{/if}}
@@ -14,12 +16,12 @@
 
   <div>
     <a href="/generos">Generos</a>
-  </div>
+  </div> --}}
 
 
 
-</div>
+{{!-- </div>
 <form action="/search">
   <input type="text" name="search" />
   <button>Buscar manga</button>
-</form>
+</form> --}}
