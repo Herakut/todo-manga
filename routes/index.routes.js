@@ -109,7 +109,7 @@ router.post("/:mangaId/modificar-manga", isLoggedIn, isAdmin, async (req, res) =
   res.redirect("/mangas");
 })
 
-router.post("/:mangaId/borrar-manga", async (req, res, next) => {
+router.post("/:mangaId/borrar-manga",isLoggedIn, isAdmin, async (req, res, next) => {
     await Manga.findByIdAndDelete(req.params.mangaId)
     res.redirect("/mangas")
 })
