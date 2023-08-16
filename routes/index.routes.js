@@ -185,8 +185,8 @@ router.get("/generos", (req, res, next) => {
 });
 
 //RUTA para los detalles-genero
-router.get("/detalles-genero/:generoID", (req, res, next) => {
-  let genero = req.params.genre;
+router.get("/detalles-genero/:genero", (req, res, next) => {
+  let genero = req.params.genero;
   console.log(genero);
 
   Manga.find({ genre: genero })
