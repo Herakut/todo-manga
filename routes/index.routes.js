@@ -214,7 +214,7 @@ router.get("/mangas/:mangaId", isLoggedIn, async (req, res, next) => {
     liked = true
   }
 
-  const likesCounter = await (await User.find({ likes: mangaId})).length
+  const likesCounter = await User.find({ likes: mangaId}).leng
 
   Manga.findById(mangaId)
     .then((response) => {

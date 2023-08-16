@@ -1,4 +1,5 @@
 const seinen=[
+    
     {
         title:"Maximum Berserk 1",
         author:"Kentaro Miura",
@@ -178,6 +179,123 @@ const seinen=[
         description:"Tras librarse de la amenaza del dios marino, Guts y los suyos consiguen llegar a su objetivo: la isla de Skellig, también conocida como `Isla de los Elfos`. Sin embargo, allí los espera una serie de conjuros y trampas destinados a evitar visitas indeseadas. El grupo penetra en la isla esquivando nuevas dificultades. ¿¡Será ese el lugar en el que Kasca podrá vivir en paz!? ¿¡Lograrán una audiencia con el llamado “rey de la tormenta de pétalos”, del que se dice que podría ayudarle a recuperar la cordura!?",
         genre:"Seinen",
         image:"https://www.panini.es/media/catalog/product/cache/a87cfc69c89e7921deea3a8e066ac416/s/b/sbema020y_0.jpg",
+    },
+    {
+        title:"Buenas noches Punpun nº1",
+        author:"Inio Asano",
+        numVolume: 1,
+        collectionType:"Buenas noches Punpun",
+        description:"Punpun no es el típico estudiante de primaria. Pese a que siente los mismos impulsos que sus compañeros, empieza a descubrir a las chicas y el sexo, la situación familiar no es la más estable y deberá enfrentarse a ello como buenamente pueda… y en principio, eso es visualizándose como un ave amorfa en un entorno extraño.",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/31Ei7T0ap3L._SX358_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Buenas noches Punpun nº2",
+        author:"Inio Asano",
+        numVolume: 2,
+        collectionType:"Buenas noches Punpun",
+        description:"EL MANGA MÁS PERSONAL E INTROSPECTIVO DEL GENIAL INIO ASANO Punpun está pasando una etapa muy complicada en su vida: tras un incidente de violencia doméstica su padre debe separarse de ellos, su madre no tiene mucho interés en su familia y aunque ha descubierto el amor al conocer a Aiko, las circunstancias le impiden estar con ella…",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/318KwNUrqzL._SX355_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Buenas noches Punpun nº3",
+        author:"Inio Asano",
+        numVolume: 3,
+        collectionType:"Buenas noches Punpun",
+        description:"LA OBRA MÁS PERSONAL DE INIO ASANO, EL AUTOR DE LA NUEVA GENERACIÓN Punpun ya va al instituto, y se siente cada vez más desconectado de todo: la chica de la que está enamorado hace años que no le habla, apenas tiene contacto con su padre, su madre pasa de todo y solo su tío se esfuerza un poco en que parezcan una familia…",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/31ob9MmzhLL._SX343_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Buenas noches Punpun nº4",
+        author:"Inio Asano",
+        numVolume: 4,
+        collectionType:"Buenas noches Punpun",
+        description:"EL MANGA MÁS PERSONAL E INTROSPECTIVO DEL GENIAL INIO ASANO La vida de los hombres Punyama no es un camino de rosas: la adolescencia de Punpun es un infierno, enamorado en silencio de Aiko, y su tío no lo lleva mucho mejor, atormentado por un terrible suceso de su pasado.",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/31tKBWjjLVL._SX338_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Buenas noches Punpun nº5",
+        author:"Inio Asano",
+        numVolume: 5,
+        collectionType:"Buenas noches Punpun",
+        description:"NUEVO VOLUMEN DEL MANGA MÁS DESGARRADOR E INTIMISTA DE ASANO La adolescencia de Punpun es de lo más complicada: su madre se desentiende, su tío está en el punto más bajo de su depresión y él sigue enamorado en silencio de Aiko, a la que traicionó cuando eran niños.",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/21DcNh5cOsL._SX355_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Buenas noches Punpun nº6",
+        author:"Inio Asano",
+        numVolume: 6,
+        collectionType:"Buenas noches Punpun",
+        description:"EL MANGA MÁS PERSONAL E INTROSPECTIVO DEL GENIAL INIO ASANO Punpun ya va al instituto, pero allí se siente desplazado, fingiendo para encajar entre unos compañeros que considera insulsos y superficiales. Su cita con Kanie no puede ir peor, pero inmerso en sus propios problemas, no nota que su madre tiene los suyos propios...",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/31lnUiK3JcL._SX354_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Buenas noches Punpun nº7",
+        author:"Inio Asano",
+        numVolume: 7,
+        collectionType:"Buenas noches Punpun",
+        description:"La madre de PunPun acaba de morir. Las confesiones que le entrega a su hijo en su última carta, lejos de ser reconfortantes, bien podrían quebrar al frágil PunPun. Ante su futuro y el regreso de un extraño, toma decisiones radicales. ¿Pero son realmente sorprendentes, viniendo de un joven desesperadamente en busca de sí mismo?",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/21Ope09fbEL._SX353_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Buenas noches Punpun nº8",
+        author:"Inio Asano",
+        numVolume: 8,
+        collectionType:"Buenas noches Punpun",
+        description:"PUNPUN SIGUE EN UN PUNTO INDETERMINADO DE SU VIDA, AFERRADO AL SUEÑO DE AIKO Los años pasan pero Punpun sigue sin encontrar su equilibrio. Trabajando unas horas para mantenerse, apenas tiene amigos, ilusiones ni nada que le impulse a vivir salvo la esperanza de reencontrar a Aiko de nuevo… hasta que Nanjô reaparece en su vida.",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/313rUqS0uEL._SX360_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Buenas noches Punpun nº9",
+        author:"Inio Asano",
+        numVolume: 9,
+        collectionType:"Buenas noches Punpun",
+        description:"UN FIEL REFLEJO DE LAS ANGUSTIAS, INSEGURIDADES Y ESPERANZAS DEL CAMINO A LA MADUREZ Tras saborear fugazmente lo que podría haber sido la felicidad, Punpun cae en una melancolía mucho más profunda que antes. El tiempo de gracia que se había concedido llega a su fin, por lo que se plantea qué hacer con su vida...",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/31vkFUUxQ9L._SX361_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Buenas noches Punpun nº10",
+        author:"Inio Asano",
+        numVolume: 10,
+        collectionType:"Buenas noches Punpun",
+        description:"Y CUANDO PUNPUN CREÍA QUE ESTABA TOCANDO FONDO, SE REENCUENTRA CON AIKO ¿Cómo se enfrentará Punpun a la realidad de una Aiko adulta? Durante años ha seguido adelante gracias a la visión idealizada de su amor de la infancia, pero es posible que al conocerla de verdad, su sueño se derrumbe.",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/31rlD954M4L._SX356_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Buenas noches Punpun nº11",
+        author:"Inio Asano",
+        numVolume: 11,
+        collectionType:"Buenas noches Punpun",
+        description:"NOS EMBARCAMOS EN LA RECTA FINAL DE LA OBRA MÁS PERSONAL DE INIO ASANO Un encuentro inesperado con Aiko, la que fuera el amor de su juventud, le da a Punpun nuevas fuerzas para tomar las riendas de su vida e intentar alcanzar la felicidad con la chica con la que ha soñado más de la mitad de su vida...",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/31L+DfFIKGL._SX358_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Buenas noches Punpun nº12",
+        author:"Inio Asano",
+        numVolume: 12,
+        collectionType:"Buenas noches Punpun",
+        description:"NOS EMBARCAMOS EN LA RECTA FINAL DE LA OBRA MÁSPERSONAL DE INIO ASANOn encuentro inesperado con Aiko, la que fuera el amor de su juventud, le da aunpun nuevas fuerzas para tomar las riendas de su vida e intentar alcanzar laelicidad con la chica con la que ha soñado más de la mitad de su vida...",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/21Wv61lQOYL._SX355_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Buenas noches Punpun nº13",
+        author:"Inio Asano",
+        numVolume: 13,
+        collectionType:"Buenas noches Punpun",
+        description:"NOS EMBARCAMOS EN LA RECTA FINAL DE LA OBRA MÁSPERSONAL DE INIO ASANOn encuentro inesperado con Aiko, la que fuera el amor de su juventud, le da aunpun nuevas fuerzas para tomar las riendas de su vida e intentar alcanzar laelicidad con la chica con la que ha soñado más de la mitad de su vida...",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/21ufGOybmhL._SX352_BO1,204,203,200_.jpg"
     },
 
 

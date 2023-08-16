@@ -1,4 +1,5 @@
 const shonen=[
+    
     {
         title:"Dragon Ball Ultimate nº 1",
         author:"Akira Toriyama",
@@ -304,6 +305,312 @@ const shonen=[
         description:"Ha llovido mucho desde que la joven Bulma inicia un viaje por un mundo lleno de peligros y aventuras junto con el joven Son Goku. Su objetivo: buscar las poderosas y mágicas Bolas del Dragón. ",
         genre:"Shonen",
         image:"https://m.media-amazon.com/images/I/51GvntYXW2L._SX343_BO1,204,203,200_.jpg",
+    },
+    {
+        title:"Ataque a los titanes nº1",
+        author:" Hajime Isayama",
+        numVolume: 1,
+        collectionType:"Ataque a los titanes",
+        description:"La raza humana, antaño dueña del mundo, se enfrenta a la extinción a manos de los titanes, gigantescos monstruos de inteligencia limitada que cazan y devoran personas por diversión. Los supervivientes se hacinan e intentan sobrevivir en una pequeña ciudad… pero algunos ya están hartos: ¡van a atacar!",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/71dGLrmf8qL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº2",
+        author:" Hajime Isayama",
+        numVolume: 2,
+        collectionType:"Ataque a los titanes",
+        description:"Tras el ataque del supertitán, que consiguió traspasar el primer muro de contención de la ciudad humana, los supervivientes están aún más desesperados. Eren y sus amigos ya se han graduado como defensores de la ciudad, pero cuando los titanes atacan de nuevo, todo su entrenamiento parece inútil ante el terror que provocan…",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/P/B0C1TJFBLQ.01._SCLZZZZZZZ_SX500_.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº3",
+        author:" Hajime Isayama",
+        numVolume: 3,
+        collectionType:"Ataque a los titanes",
+        description:"Un misterioso titán aparece de la nada y ataca a sus congéneres, en apariencia protegiendo a los seres humanos. ¡¿Qué está pasando?! Nadie sabe a ciencia cierta cuál es el origen de esas misteriosas criaturas, pero… ¿cabría la posibilidad de tener a alguno del lado de la humanidad?",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/51fpOimYxQL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº4",
+        author:" Hajime Isayama",
+        numVolume: 4,
+        collectionType:"Ataque a los titanes",
+        description:"Ya no es un secreto que Eren puede convertirse en titán, pero Armin convence a sus superiores de que no le maten, sino que le utilicen para volver a sellar el muro. Pero el control de Eren sobre su álter ego no es completo y tiende a descontrolarse…",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/81j2BlUpRSL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº5",
+        author:" Hajime Isayama",
+        numVolume: 5,
+        collectionType:"Ataque a los titanes",
+        description:"EL FUTURO DE EREN AHORA ESTÁ EN MANOS DEL CUERPO DE EXPLORACIÓN. Tras desvelarse que Eren puede convertirse en titán, un consejo decide qué hacer con él, si ejecutarlo para salvar sus almas y a los habitantes de la ciudad, o destinarlo a algún cuerpo del ejército para que ayude a la humanidad.",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/71WNwe210TL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº6",
+        author:" Hajime Isayama",
+        numVolume: 6,
+        collectionType:"Ataque a los titanes",
+        description:"UN SHONEN DIFERENTE QUE ESTÁ ARRASANDO EN TODO EL MUNDO! Ahora que la condición de Eren como titán es conocida por todos, el cuerpo de exploración está dispuesto a aprovechar sus capacidades especiales en su lucha contra los terribles titanes. Pero durante una misión aparece un titán hembra que da muestras de una gran inteligencia… ¡muy similar a la de Eren!",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/P/B0C1TH4BZN.01._SCLZZZZZZZ_SX500_.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº7",
+        author:" Hajime Isayama",
+        numVolume: 7,
+        collectionType:"Ataque a los titanes",
+        description:"NUEVO VOLUMEN DE SHINGEKI NO KYOJIN, EL MANGA REVELACIÓN DEL AÑO. Se desvela el objetivo real de Edwin Smith , que no es otro que atrapar a la titán hembra pero no solo para investigarla… sino porque sospecha que es uno de los gigantes dotados de inteligencia. Y como tal, es muchísimo más peligroso para la raza humana...",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/71uO8ggGxLL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº8",
+        author:" Hajime Isayama",
+        numVolume: 8,
+        collectionType:"Ataque a los titanes",
+        description:"UN NUEVO VOLUMEN DEL MANGA QUE ARRASA EN TODO EL MUNDO. Hay algo aún más aterrador que un supertitán, y es un titán con inteligencia, un humano que, como Eren, se puede transformar en gigante… pero cuyo objetivo es destruir a la raza humana. Y por lo tanto, ¡hay que capturarlo!",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/71DrTou4xWL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº9",
+        author:" Hajime Isayama",
+        numVolume: 9,
+        collectionType:"Ataque a los titanes",
+        description:"No ha sido fácil, pero Eren y el resto de su grupo consiguen capturar al titán hembra con vida. Pero lo que no esperaban es la sorpresa que se oculta en el interior de los muros que les rodean ni la inesperada noticia de que el muro Rose ha caído!",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/71isgl8UrLL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº10",
+        author:" Hajime Isayama",
+        numVolume: 10,
+        collectionType:"Ataque a los titanes",
+        description:"¡EL MANGA QUE HA PULVERI ZADO TODOS LOS RÉCORDS DE VENTAS MUNDIALES! Los titanes se han infiltrado dentro del muro, lo que significa que, de algún modo, han conseguido abrir una brecha. Todos los esfuerzos se centran en encontrar esa grieta, pero… ¿y si están todos equivocados?",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/71w+u1wXuUL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº11",
+        author:" Hajime Isayama",
+        numVolume: 11,
+        collectionType:"Ataque a los titanes",
+        description:"¡HAY MÁS TRAIDORES EN EL CUERPO DE EXPLORACIÓN! ¿POR QUÉ EREN SIGUE SIENDO SU OBJETIVO? El cuerpo de exploración está perplejo: tras la aparición de titanes dentro del muro, son incapaces de encontrar la brecha que, por lógica, han tenido que usar para acceder a las zonas protegidas por los humanos. Y por si fuera poco, descubren que hay traidores entre ellos…",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/812JNJkaSOL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº12",
+        author:" Hajime Isayama",
+        numVolume: 12,
+        collectionType:"Ataque a los titanes",
+        description:"POR FIN LOS TITANES TIENEN A EREN EN SU PODER... ¿QUÉ SERÁ LO QUE QUIEREN DE ÉL? Los miembros de la promoción 104 están perplejos y asustados: no solo los traidores a la raza humana formaban parte de su grupo, eran compañeros en los que confiaban",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/P/B0C1TGXTSF.01._SCLZZZZZZZ_SX500_.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº13",
+        author:" Hajime Isayama",
+        numVolume: 13,
+        collectionType:"Ataque a los titanes",
+        description:"ANTIGUAS INTRIGAS , TRAICIONES Y TERR OREN ESTE NUEVO VOLUMEN DEL MANGA DELMOMENTOEl plan de Reiner y Bertolt consistía en llevar a sus reheneshasta su pueblo natal, pero no contaban con que suscompañeros de promoción harán lo que esté en su manopor liberar a sus amigos.",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/P/B0C1TGT5FJ.01._SCLZZZZZZZ_SX500_.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº14",
+        author:" Hajime Isayama",
+        numVolume: 14,
+        collectionType:"Ataque a los titanes",
+        description:"EL CUERPO DE EXPLORACIÓN DECIDE… ¡¡REBE LARSE!! El objetivo de la policía militar central, que está bajo las órdenes directas del rey, es capturar a Eren e Historia. El cuerpo de exploración, ante el desenfreno del rey, ¡decide derrocar a la monarquía!",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/51OgTyu09oL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº15",
+        author:" Hajime Isayama",
+        numVolume: 15,
+        collectionType:"Ataque a los titanes",
+        description:"¡EMOCIONANTE VOLUMEN LLENO DE INTRIGA Y REVELACIONES SOBRE EL PASADO! El secuestro de Eren e Historia es la gota que ha colmado el vaso: ni Levi ni Edwin ni sus aliados están dispuestos a seguir bailando al son del gobierno, y están más decididos que nunca a derrocar a la falsa monarquía.",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/51RrlTN-IGL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº16",
+        author:" Hajime Isayama",
+        numVolume: 16,
+        collectionType:"Ataque a los titanes",
+        description:"¡LEVI Y SU GRUPO AVERIGUAN DÓNDE RETIENEN A EREN, Y LO ARRIESGARÁN TODO PARA RESCATARLE! El cuerpo de exploración, a pesar de haber sido difamado por la policía militar central, logra derribar a la monarquía con la colaboración de todos los cuerpos militares. Ya solo queda hacer que el rey abdique en favor de la reina Historia, que es miembro de la familia real auténtica, ¿pero podrán convencerla?",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/51ag7YX8wdL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº17",
+        author:" Hajime Isayama",
+        numVolume: 17,
+        collectionType:"Ataque a los titanes",
+        description:"ES EL MOMENTO DE DERROCAR A LA MONARQUÍA… ¿PERO PODRÁN CORONAR A SU REINA? El cuerpo de exploración se ha convertido en el grupo de rebeldes dispuesto a derrocar al gobierno corrupto y coronar a la verdadera dinastía que debe gobernar a los humanos. Y para ello, Historia deberá arriesgarlo todo...",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/P/B0C1THKW88.01._SCLZZZZZZZ_SX500_.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº18",
+        author:" Hajime Isayama",
+        numVolume: 18,
+        collectionType:"Ataque a los titanes",
+        description:"INTENTAN RECUPERAR EL MURO MARIA, PERO LOS VIGILAN MUY DE CERCA... Tras derrocar al gobierno monárquico y expulsar a la facción del antiguo régimen, las preparaciones para la operación de recuperación del muro Maria avanzan paso a paso, gracias al mineral luminoso que han obtenido recientemente y a la capacidad de endurecimiento de Eren.",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/510PFq2JFfL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº19",
+        author:" Hajime Isayama",
+        numVolume: 19,
+        collectionType:"Ataque a los titanes",
+        description:"PARA OBTENER UNA AUTÉNTICA VICTORIA, EL CUERPO DE EXPLORACIÓN DEBE RECUPERAR EL MURO MARIA. La operación consiste en usar la capacidad de endurecimiento de Eren para tapar el agujero del muro Maria en el distrito de Shiganshina para, a continuación, ir al sótano de la casa donde nació Eren con la intención de descubrir la verdad que se oculta allí.",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/71b3eJC6lfL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº20",
+        author:" Hajime Isayama",
+        numVolume: 20,
+        collectionType:"Ataque a los titanes",
+        description:"El cuerpo de exploración realiza una operación de recuperación del muro Maria para descubrir la verdad que se oculta en la casa donde nació Eren. En el camino, Reiner, Bertolt y el titán animal esperan para atacarles. ¿Lograrán Eren y los demás salir victoriosos del combate contra sus antiguos compañeros y descubrir la verdad?",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/71ZtnkfJY9L.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº21",
+        author:" Hajime Isayama",
+        numVolume: 21,
+        collectionType:"Ataque a los titanes",
+        description:"¡LAS LUCHAS EN TORNO A LA MISTERIOSA ISLA LLEGAN A SU PUNTO ÁLGIDO EN ESTE TOMO FINAL! Ryô se apresura a ir con Kaito y los demás miembros de la resistencia a la zona de reclusión especial central para rescatar a Mari. Sin embargo, numerosos enemigos obstaculizan su camino. ¿Logrará Ryô rescatar a Mari sana y salva?! ¿Y descubriremos qué relación hay entre el enigma esclarecido de Área D, la cárcel de la isla solitaria, y lo que trama Rei Kazaragi?",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/61RPfSEOF4L.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº22",
+        author:" Hajime Isayama",
+        numVolume: 22,
+        collectionType:"Ataque a los titanes",
+        description:"EL DIARIO DEL PADRE DE EREN LES DESVELA SECRETOS SORPRENDENTES...Tras la terrible batalla contra los titanes, en especial contra el titán animal, el cuerpo de exploración llega a la casa natal de Eren, pero el secreto que se oculta en el sótano no es en absoluto lo que se esperaban. ¿Qué camino deberán seguir ante la verdad del mundo que se les ha revelado?",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/61IAeiDUoeL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº23",
+        author:" Hajime Isayama",
+        numVolume: 23,
+        collectionType:"Ataque a los titanes",
+        description:"EREN PENSABA QUE AL OTRO LADO DEL MAR ENCONTRARÍAN LA LIBERTAD , PERO ... Llegar hasta el mar solo es el primer paso: más allá de las olas se disputa una terrible batalla entre los eldianos y los marleyanos. Y para ellos, no hay mayor honor que demostrar su valor en combate para ser dignos de poseer los poderes de un titán…",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/614AQMGYjbL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº24",
+        author:" Hajime Isayama",
+        numVolume: 24,
+        collectionType:"Ataque a los titanes",
+        description:"HAY TODO UN MUNDO TRAS LOS MUROS DONDE VIVEN EREN Y COMPAÑÍA... Fuera de la isla Paradis, donde viven Eren y compañía, se extiende un mundo donde viven otros seres humanos.",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/51lkiRlYn7L.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº25",
+        author:" Hajime Isayama",
+        numVolume: 25,
+        collectionType:"Ataque a los titanes",
+        description:"Los marleyanos llevan muchos años amenazando la isla Paradis, donde viven Eren y sus amigos. En Marley hay gente luchando, día tras día, para proteger su patria y defender sus derechos humanos. Con la intención de demostrar el valor de su existencia, se preparan para declarar la guerra a la isla Paradis, pero entonces aparece alguien inesperado…",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/81IKt8s4m6L.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº26",
+        author:" Hajime Isayama",
+        numVolume: 26,
+        collectionType:"Ataque a los titanes",
+        description:"Marley estaba exponiendo la amenaza que suponía la isla paradis para el mundo entero, cuando apareció eren jaeger, el traidor a la paz. Mientras eren y el titán martillo de guerra luchan intensamente, ¡se produce un choque entre las mayores fuerzas de combate de ambos países.",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/81v0GbZQx8L.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº27",
+        author:" Hajime Isayama",
+        numVolume: 27,
+        collectionType:"Ataque a los titanes",
+        description:"La crisis se cierne sobre los habitantes de la isla Paradis... Eren entra clandestinas en Marley y provoca muchos estragos. Su objetivo era regresar a El dia con zeke. Al acogerle, como tiene sangre real, los el dia nos obtienen la condición necesaria para la activación del estruendo que Arrolla la tierra, la fuerza con la que se opondrán al mundo entero. Pero esa será, al mismo tiempo, la señal que dé comienzo a la cuenta atrás para una guerra total.",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/51aoNov1SzL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº28",
+        author:" Hajime Isayama",
+        numVolume: 28,
+        collectionType:"Ataque a los titanes",
+        description:"¿Conseguirán encontrarse eren y zeke? Eren y compañía han acogido a zeke, que tiene sangre real, consiguiendo así la condición necesaria para la activación del estruendo que Arrolla la tierra. Pero el ejército considera que hay peligro de que zeke manipule a eren y vacila en dejar que los dos hermanos se encuentren. Entonces, detienen a los soldados voluntarios de Marley. Una parte de los soldados el dia nos y del pueblo está descontenta ante esta situación y, al final, eren decide actuar por su cuenta...",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/813L2i7Xv+L.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº29",
+        author:" Hajime Isayama",
+        numVolume: 29,
+        collectionType:"Ataque a los titanes",
+        description:"El verdadero plan de zeke sale a la luz... Con la intención de activar el estruendo que Arrolla la tierra, los juristas se han alzado contra el ejército. Asesinaron al generalísimo zacklay y detuvieron a los militares más importantes. Ahora van a encontrarse con zeke, que estaba bajo la custodia de Levi. Este ha logrado capturarle otra vez, tras un combate a muerte, pero entonces...",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/81hm3y2xEhL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº30",
+        author:" Hajime Isayama",
+        numVolume: 30,
+        collectionType:"Ataque a los titanes",
+        description:"Si eren y zeke entran en contacto, será el fin de los el dia nos... El plan que zeke le ha encomendado a eren consiste en aplicar la eutanasia a todos los el dia nos. La clave del plan está en que eren, que tiene el poder del titán fundador, y zeke, que es un titán de sangre real, entren en contacto. Pero cuando zeke logra escapar y abrir se paso a través del cerco formado por Levi y el cuerpo de exploración, aparece el ejército mar Ley a no...",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/81HUy-YrZML.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº31",
+        author:" Hajime Isayama",
+        numVolume: 31,
+        collectionType:"Ataque a los titanes",
+        description:"Eren consigue el poder de ymir y una armada de ti tan es colosales se pone en marcha zeke le encomienda a eren el plan de la eutanasia. Ambos rompen el cerco y logran entrar en contacto, que es la clave del plan. Sin embargo, el auténtico plan de eren era traicionar a zeke, destruyendo el mundo por medio del estruendo que Arrolla la tierra. La lucha entre los dos hermanos por el poder de la fundadora ymir termina con la victoria de eren y, por fin, una multitud de ti tan es colosales empieza una gran marcha.",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/81T4m9o8TzL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº32",
+        author:" Hajime Isayama",
+        numVolume: 32,
+        collectionType:"Ataque a los titanes",
+        description:"¿EN QUÉ SE HA CONVERTIDO EREN? ¿EN UNALVADOR O EN UN GENOCIDA?ren ha obtenido el poder del titán Fundador y, por la paz de Paradis, la isladonde nació y creció, decide erradicar a la raza humana que vive fuera de la isla. Por ello, inicia la marcha junto a una legión de titanes. Sin que se haya llegado a ninguna conclusión, el grupo de Mikasa y Armin empieza a actuar parasalvar al mundo.",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/81GfD7a9XQL.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº33",
+        author:" Hajime Isayama",
+        numVolume: 33,
+        collectionType:"Ataque a los titanes",
+        description:"¡PENÚLTIMO TOMO PARA LLEGAR AL DESENLACE DETAQUE A LOS TITANES!ren continúa avanzando mediante el estruendo que arrolla la tierra con lantención de deshacerse de todos los humanos del mundo, a excepción dea isla Paradis. Mikasa, Armin y su grupo quieren ir a Odiha, donde existe la posibilidad de llevar a cabo la revisión del hidroavión que les permitirá perseguir Eren por el cielo. Pero, para ello, deberán renunciar a Liberio, dondeiven las familias de Annie, Reiner y compañía.",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/81SDEhXFKlS.jpg"
+    },
+    {
+        title:"Ataque a los titanes nº34",
+        author:" Hajime Isayama",
+        numVolume: 34,
+        collectionType:"Ataque a los titanes",
+        description:"¡LLEGAMOS AL ESPERADO FINAL DE ATAQUE A LOS TITANES! El estruendo va aplastando toda la tierra, a excepción de la isla Paradis, y va arrebatando vidas, una tras otra. Armin, Mikasa y los demás han averiguado cuál es el blanco de ataque de Eren y, a pesar de que entre enemigos, aliados y antiguos compañeros, están perdiendo a muchísima gente, por fin alcanzan a Eren.",
+        genre:"Shonen",
+        image:"https://m.media-amazon.com/images/I/41kjI546oEL.jpg"
     },
 ]
 const mongoose = require("mongoose");
