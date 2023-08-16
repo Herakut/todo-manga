@@ -1,10 +1,14 @@
 <div>
     <h2>TOMOOOOOOOOOOOOOOO individualizado</h2>
    
- 
-   <div>
-    <h2>TOMOOOOOOOOOOOOOOO individualizado</h2>
-   
+    {{#if this.isAdmin}}
+      <a href="/{{this.manga._id}}/modificar-manga">Update manga</a>
+
+      <form action="/{{this.manga._id}}/borrar-manga" method="post">
+        <button type="submit">Delete manga</button>
+      </form>
+    {{/if}}
+
     <div>
         <h4>{{this.manga.title}}</h4>
         <h4>{{this.manga.numVolume}}</h4>

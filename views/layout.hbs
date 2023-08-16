@@ -10,23 +10,28 @@
    </head>
 
    <body>
-      <nav>
-    <a href="/collections">Collections</a>
-    <a href="/mangas">Mangas</a>
-  </nav>
-  <div>
-    {{#if this.isLogged}}
-      <a href="/profile">Profile</a>
-      <a href="/auth/logout">Cerrar sesion</a>
-      <a href="/subir-manga">Subir manga</a>
-    {{else}}
-      <p><a href="/auth/login">Login</a> | <a href="/auth/signup">Sign Up</a></p>
-    {{/if}}
-  </div>
+      <nav style="display: flex; justify-content: space-around; width: 70%; margin: auto auto 2em auto">
+        <div>
+          <a href="/">Inicio</a>
+          <a href="/collections">Collections</a>
+          <a href="/mangas">Mangas</a>
+          <a href="/generos">Generos</a>
+          {{#if this.puedeSubirManga}}
+            <a href="/subir-manga">Subir manga</a>
+          {{/if}}
+        </div>
+        <div>
+          {{#if this.isLogged}}
+            <a href="/profile">Profile</a>
+            <a href="/auth/logout">Cerrar sesion</a>
+          {{else}}
+            <a href="/auth/login">Login</a>
+            <a href="/auth/signup">Sign Up</a>
+          {{/if}}
+        </div>
+      </nav>
 
-  <div>
-    <a href="/generos">Generos</a>
-  </div>
+      
   </div>
 <form action="/search">
   <input type="text" name="search" />

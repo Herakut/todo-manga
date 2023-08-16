@@ -20,13 +20,12 @@ router.use("/auth", authRouter);
 
 
 //Ruta para la vista de subir manga
-router.get("/subir-manga", (req, res) => {
+router.get("/subir-manga", isLoggedIn, isAdmin, (req, res) => {
   res.render("subir-manga.hbs");
 });
 
-
 //Ruta para poder subir un manga
-router.post("/subir-manga", async (req, res) => {
+router.post("/subir-manga", isLoggedIn, isAdmin, async (req, res) => {
   const {
     title,
     numVolume,
@@ -65,27 +64,55 @@ router.post("/subir-manga", async (req, res) => {
   res.redirect("/mangas");
 });
 
-
 // Ruta del perfil de usuario
-router.get("/profile", (req, res) => {
+router.get("/profile", isLoggedIn, (req, res) => {
+  let isLogged = true;
   let puedeSubirManga = false;
   if (req.session.user.role === "admin") {
     puedeSubirManga = true;
   }
 
-  res.render("profile.hbs", { puedeSubirManga });
+  res.render("profile.hbs", { puedeSubirManga, isLogged });
 });
 
+/* GET home page */
+router.get("/", (req, res, next) => {
+  let isLogged = false;
 
-// Ruta del perfil de usuario-----PARECE QUE ES LO MISMO QUE EL DE ARRIBA, MIRAR
-// router.get("/profile", (req, res) => {
-//   let puedeSubirManga = false;
-//   if (req.session?.user.role === "admin") {
-//     puedeSubirManga = true;
-//   }
+  if (req.session.user !== undefined) {
+    isLogged = true;
+  }
 
-//   res.render("profile.hbs", { puedeSubirManga });
-// });
+  res.render("index", {
+    isLogged,
+  });
+});
+
+router.get('/:mangaId/modificar-manga', isLoggedIn, isAdmin, async (req, res) => {
+  const manga = await Manga.findById(req.params.mangaId)
+  res.render("modificar-manga.hbs", { manga: manga });
+});
+
+router.post("/:mangaId/modificar-manga", isLoggedIn, isAdmin, async (req, res) => {
+
+  const { title, numVolume, collectionType, description, author, genre, image } = req.body;
+  await Manga.findByIdAndUpdate(req.params.mangaId, { 
+    title: title,
+    numVolume: numVolume,
+    collectionType: collectionType,
+    description: description,
+    author: author,
+    genre: genre,
+    image: image 
+  })
+
+  res.redirect("/mangas");
+})
+
+router.post("/:mangaId/borrar-manga",isLoggedIn, isAdmin, async (req, res, next) => {
+    await Manga.findByIdAndDelete(req.params.mangaId)
+    res.redirect("/mangas")
+})
 
 
 
@@ -96,19 +123,7 @@ router.get("/profile", (req, res) => {
 
 
 
-/* GET home page */
-router.get("/", (req, res, next) => {
-  let isLogged = false;
 
-  if (req.session.user !== undefined) {
-    isLogged = true;
-  }
-  console.log(isLogged);
-
-  res.render("index", {
-    isLogged,
-  });
-});
 
 
 //Ruta collection
@@ -123,7 +138,6 @@ router.get("/collections", (req, res, next) => {
 router.get("/mangas", isLoggedIn, (req, res, next) => {
   Manga.find()
     .select({ title: 1, image: 1 })
-
     .then((response) => {
       console.log(response);
       res.render("mangas.hbs", {
@@ -139,11 +153,19 @@ router.get("/mangas/:mangaId", (req, res, next) => {
   let mangaId = req.params.mangaId;
   console.log(mangaId);
 
+  let isLogged = true
+  let isAdmin = false
+  if (req.session.user.role === "admin") {
+    isAdmin = true
+  }
+
   Manga.findById(mangaId)
     .then((response) => {
       console.log(response);
       res.render("tomo.hbs", {
         manga: response,
+        isAdmin,
+        isLogged
       });
     })
     .catch((error) => {
