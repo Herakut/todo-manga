@@ -1,62 +1,39 @@
 <div>
-    <h2>TOMOOOOOOOOOOOOOOO individualizado</h2>
-   
-    {{#if this.isAdmin}}
-      <a href="/{{this.manga._id}}/modificar-manga">Update manga</a>
+  <h2>TOMOOOOOOOOOOOOOOO individualizado</h2>
 
-      <form action="/{{this.manga._id}}/borrar-manga" method="post">
-        <button type="submit">Delete manga</button>
-      </form>
-    {{/if}}
+  {{#if this.isAdmin}}
+    <a href="/{{this.manga._id}}/modificar-manga">Update manga</a>
 
-    <div>
-        <h4>{{this.manga.title}}</h4>
-        <h4>{{this.manga.numVolume}}</h4>
-        <h4>{{this.manga.collectionType}}</h4>
-        <h4>{{this.manga.description}}</h4>
-        <h4>{{this.manga.author}}</h4>
-        <h4>{{this.manga.genre}}</h4>
-        <img src="{{this.manga.image}}" alt="imagen tomo">
-    </div>
+    <form action="/{{this.manga._id}}/borrar-manga" method="post">
+      <button type="submit">Delete manga</button>
+    </form>
+  {{/if}}
+
+  <div>
+    <h4>{{this.manga.title}}</h4>
+    <h4>{{this.manga.numVolume}}</h4>
+    <h4>{{this.manga.collectionType}}</h4>
+    <h4>{{this.manga.description}}</h4>
+    <h4>{{this.manga.author}}</h4>
+    <h4>{{this.manga.genre}}</h4>
+    <img src="{{this.manga.image}}" alt="imagen tomo" />
+  </div>
+
+  <a href="javascript:history.back()">Volver a la página anterior</a>
+
+
+  <div>
     
-    <a href="javascript:history.back()">Volver a la página anterior</a>
-    
-</div>
-
-
-
-
-
-
-
-
-
-   {{!-- Quiero cambios en el div de abajo
-   -En vez de llevarme a "/generos" me tiene que llevar a otro hbs(igual que este)
-       --}}
- {{!-- <div>
-  <a href="/generos">
+  {{#each this.objetosAleatorios}}
+  <a href="/generos/:generoID">  
+  {{!-- FALTA REDIRIGIR BIEN LO DE ARRIBA --}}
     <button>
-      <h4>{{this.manga.title}}</h4>
-      <img src="{{this.manga.image}}" alt="imagen tomo" width="100px">
-      
+      <h4>{{this.title}}</h4>
+      <img src="{{this.image}}" alt="imagen tomo" />
     </button>
   </a>
-</div>
 
-  <div>
-    <h2>Objeto aleatorio con el mismo género:</h2>
-    <a href="/mangas/{{this.manga.genre}}/random">{{this.randomManga2.title}}</a>
-    <img src="{{this.randomManga2.image}}" alt="imagen objeto aleatorio">
+  {{/each}}
   </div>
-
-  <div>
-    <h2>Objeto aleatorio con el mismo género:</h2>
-    <a href="/mangas/{{this.manga.genre}}/random">{{this.randomManga3.title}}</a>
-    <img src="{{this.randomManga3.image}}" alt="imagen objeto aleatorio">
-  </div>
-</div>
-      
-    </div> --}}
 
 </div>

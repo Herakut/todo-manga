@@ -13,11 +13,9 @@ router.use(updateLocals);
 // Añadimos las rutas de auth para poder usarlas
 const authRouter = require("./auth.routes.js");
 router.use("/auth", authRouter);
- 
+
 // de aqui a arriba no tocar
 // -------------------------------------------------------------------
-
-
 
 //Ruta para la vista de subir manga
 router.get("/subir-manga", isLoggedIn, isAdmin, (req, res) => {
@@ -75,7 +73,22 @@ router.get("/profile", isLoggedIn, (req, res) => {
   res.render("profile.hbs", { puedeSubirManga, isLogged });
 });
 
+
+
+
+
+
+
+
+
+
+
 /* GET home page */
+
+//QUIERO QUE ME MUESTRE 18 ELEMENTOS ALEATORIOS AL INGRESAR EN ESTA VISTA, 
+//LA FUNCION ESTA ABAJO
+//DONDE ESTA LA VISTA???
+
 router.get("/", (req, res, next) => {
   let isLogged = false;
 
@@ -87,54 +100,106 @@ router.get("/", (req, res, next) => {
     isLogged,
   });
 });
-
-router.get('/:mangaId/modificar-manga', isLoggedIn, isAdmin, async (req, res) => {
-  const manga = await Manga.findById(req.params.mangaId)
-  res.render("modificar-manga.hbs", { manga: manga });
-});
-
-router.post("/:mangaId/modificar-manga", isLoggedIn, isAdmin, async (req, res) => {
-
-  const { title, numVolume, collectionType, description, author, genre, image } = req.body;
-  await Manga.findByIdAndUpdate(req.params.mangaId, { 
-    title: title,
-    numVolume: numVolume,
-    collectionType: collectionType,
-    description: description,
-    author: author,
-    genre: genre,
-    image: image 
-  })
-
-  res.redirect("/mangas");
-})
-
-router.post("/:mangaId/borrar-manga",isLoggedIn, isAdmin, async (req, res, next) => {
-    await Manga.findByIdAndDelete(req.params.mangaId)
-    res.redirect("/mangas")
-})
+// Manga.find({collectionType})
+//   .then((allRandom)=>{{
+//   if (allRandom.length <= 18) {    
+//   } else {
+//     const objetosSeleccionados = [];
+//     while (objetosSeleccionados.length < 18) {
+//       const indiceRandom = Math.floor(Math.random() * allRandom.length);
+//       const objetoSeleccionado = allRandom.splice(indiceRandom, 1)[0];
+//       objetosSeleccionados.push(objetoSeleccionado);
+//     }    
+//   }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+router.get(
+  "/:mangaId/modificar-manga",
+  isLoggedIn,
+  isAdmin,
+  async (req, res) => {
+    const manga = await Manga.findById(req.params.mangaId);
+    res.render("modificar-manga.hbs", { manga: manga });
+  }
+);
+
+router.post(
+  "/:mangaId/modificar-manga",
+  isLoggedIn,
+  isAdmin,
+  async (req, res) => {
+    const {
+      title,
+      numVolume,
+      collectionType,
+      description,
+      author,
+      genre,
+      image,
+    } = req.body;
+    await Manga.findByIdAndUpdate(req.params.mangaId, {
+      title: title,
+      numVolume: numVolume,
+      collectionType: collectionType,
+      description: description,
+      author: author,
+      genre: genre,
+      image: image,
+    });
+
+    res.redirect("/mangas");
+  }
+);
+
+router.post(
+  "/:mangaId/borrar-manga",
+  isLoggedIn,
+  isAdmin,
+  async (req, res, next) => {
+    await Manga.findByIdAndDelete(req.params.mangaId);
+    res.redirect("/mangas");
+  }
+);
 
 // Ruben
 // -------------------------------------------------------------------------------
 // Daniel
 
-
-
-
-
-
-
 //Ruta collection
+//quiero mostrar 4 cartas, uno por cada genero. Cada carta me lleva a una
+//vista con todos los comics que compartan genero
 router.get("/collections", (req, res, next) => {
-  res.render("collections");
+    res.render("collections.hbs");
+})
 
-  // Manga.find({ collection: collection})
-});
+ 
+
+  
 
 
-//Ruta para todos los mangas 
+//Ruta para todos los mangas
 router.get("/mangas", isLoggedIn, (req, res, next) => {
   Manga.find()
     .select({ title: 1, image: 1 })
@@ -147,25 +212,37 @@ router.get("/mangas", isLoggedIn, (req, res, next) => {
     .catch((error) => {});
 });
 
-
 //Ruta para monstrar los tomos al clickar
 router.get("/mangas/:mangaId", (req, res, next) => {
   let mangaId = req.params.mangaId;
   console.log(mangaId);
 
-  let isLogged = true
-  let isAdmin = false
+  let isLogged = true;
+  let isAdmin = false;
   if (req.session.user.role === "admin") {
-    isAdmin = true
+    isAdmin = true;
   }
 
   Manga.findById(mangaId)
     .then((response) => {
-      console.log(response);
-      res.render("tomo.hbs", {
-        manga: response,
-        isAdmin,
-        isLogged
+      // console.log(response);
+      Manga.find({ genre: response.genre })
+      .then((allMangabyGenreArray) => {
+          const objetosAleatorios = [];
+          while (objetosAleatorios.length < 3) {
+            const indiceAleatorio = Math.floor(Math.random() * allMangabyGenreArray.length);
+            const objetoAleatorio = allMangabyGenreArray[indiceAleatorio];
+            objetosAleatorios.push(objetoAleatorio);           
+          }
+          console.log(objetosAleatorios)
+
+        res.render("tomo.hbs", {
+          manga: response,
+          isAdmin,
+          isLogged,
+          objetosAleatorios,
+
+        });
       });
     })
     .catch((error) => {
@@ -223,9 +300,7 @@ router.get("/detalles-genero/:genero", (req, res, next) => {
     });
 });
 
-
-
-// de aqui a abajo por mirar, modificar o borrar 
+// de aqui a abajo por mirar, modificar o borrar
 // ----------------------------------------------------------------
 
 //Ruta para todos los mangas------>POR COMODIDAD ESTA AQUI PERO HAY QUE BORRARLO, DEJAMOS EL DE ARRIBA SOLO
@@ -241,9 +316,4 @@ router.get("/mangas", (req, res, next) => {
     })
     .catch((error) => {});
 });
-
-
-
-
-
 module.exports = router;
