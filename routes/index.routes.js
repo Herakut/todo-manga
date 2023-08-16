@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Manga = require("../models/Manga.model");
+const Comment = require("../models/Comment.model")
+const User = require("../models/User.model");
 
 // Importamos los middlewares para usarlos en las rutas
 const {
@@ -65,14 +67,18 @@ router.post("/subir-manga", isLoggedIn, isAdmin, async (req, res) => {
 });
 
 // Ruta del perfil de usuario
-router.get("/profile", isLoggedIn, (req, res) => {
+router.get("/profile", isLoggedIn, async (req, res) => {
   let isLogged = true;
   let puedeSubirManga = false;
   if (req.session.user.role === "admin") {
     puedeSubirManga = true;
   }
 
-  res.render("profile.hbs", { puedeSubirManga, isLogged });
+  const user = await User.findById(req.session.user._id)
+
+  console.log(user)
+
+  res.render("profile.hbs", { puedeSubirManga, isLogged, user });
 });
 
 /* GET home page */
@@ -114,6 +120,44 @@ router.post("/:mangaId/borrar-manga",isLoggedIn, isAdmin, async (req, res, next)
     res.redirect("/mangas")
 })
 
+router.post("/:mangaId/comment", isLoggedIn, async (req, res) => {
+
+  const { comentario } = req.body
+
+  Comment.create({
+    user: req.session.user._id,
+    manga: req.params.mangaId,
+    text: comentario
+  })
+
+  res.redirect(`/mangas/${req.params.mangaId}`);
+})
+
+router.post("/:mangaId/like", isLoggedIn, async (req, res) => {
+
+  const mangaId = req.params.mangaId
+
+  await User.findByIdAndUpdate(req.session.user._id, {
+    $addToSet: { likes: mangaId } },
+    { $new: true }
+  )
+
+  res.redirect(`/mangas/${mangaId}`);
+})
+
+router.post("/:mangaId/dislike", isLoggedIn, async (req, res) => {
+
+  const mangaId = req.params.mangaId
+  console.log(mangaId)
+
+  await User.findByIdAndUpdate(req.session.user._id, {
+    $pull: { likes: mangaId } },
+    { $new: true }
+  )
+
+  res.redirect(`/mangas/${mangaId}`);
+})
+
 
 
 // Ruben
@@ -127,8 +171,9 @@ router.post("/:mangaId/borrar-manga",isLoggedIn, isAdmin, async (req, res, next)
 
 
 //Ruta collection
-router.get("/collections", (req, res, next) => {
-  res.render("collections");
+router.get("/collections", isLoggedIn, (req, res, next) => {
+  let isLogged = true;
+  res.render("collections", { isLogged });
 
   // Manga.find({ collection: collection})
 });
@@ -136,12 +181,14 @@ router.get("/collections", (req, res, next) => {
 
 //Ruta para todos los mangas 
 router.get("/mangas", isLoggedIn, (req, res, next) => {
+  let isLogged = true;
   Manga.find()
     .select({ title: 1, image: 1 })
     .then((response) => {
       console.log(response);
       res.render("mangas.hbs", {
         mangaTitle: response,
+        isLogged
       });
     })
     .catch((error) => {});
@@ -149,7 +196,7 @@ router.get("/mangas", isLoggedIn, (req, res, next) => {
 
 
 //Ruta para monstrar los tomos al clickar
-router.get("/mangas/:mangaId", (req, res, next) => {
+router.get("/mangas/:mangaId", isLoggedIn, async (req, res, next) => {
   let mangaId = req.params.mangaId;
   console.log(mangaId);
 
@@ -159,13 +206,26 @@ router.get("/mangas/:mangaId", (req, res, next) => {
     isAdmin = true
   }
 
+  const comentarios = await Comment.find({ manga: mangaId }).populate('user')
+  const user = await User.findById(req.session.user._id)
+
+  let liked = false
+  if (user.likes.includes(req.params.mangaId)) {
+    liked = true
+  }
+
+  const likesCounter = await (await User.find({ likes: mangaId})).length
+
   Manga.findById(mangaId)
     .then((response) => {
       console.log(response);
       res.render("tomo.hbs", {
         manga: response,
         isAdmin,
-        isLogged
+        isLogged,
+        comentarios,
+        liked,
+        likesCounter
       });
     })
     .catch((error) => {
@@ -174,14 +234,15 @@ router.get("/mangas/:mangaId", (req, res, next) => {
 });
 
 //Ruta del buscador
-router.get("/search", (req, res, next) => {
+router.get("/search", isLoggedIn, (req, res, next) => {
+  let isLogged = true;
   console.log(req.query);
   Manga.find({ title: { $regex: req.query.search } })
-
     .then((foundManga) => {
-      console.log("hoilaaaaaaaaaaaaaaaaaa");
+      // console.log("hoilaaaaaaaaaaaaaaaaaa");
       res.render("tomo-details.hbs", {
         foundManga,
+        isLogged
       });
     })
     .catch((error) => {
@@ -190,15 +251,18 @@ router.get("/search", (req, res, next) => {
 });
 
 //Ruta para Generos
-router.get("/generos", (req, res, next) => {
+router.get("/generos", isLoggedIn, (req, res, next) => {
   let mangaId = req.params.mangaId;
   console.log(mangaId);
+
+  let isLogged = true;
 
   Manga.findById(mangaId)
     .then((response) => {
       console.log(response);
       res.render("generos.hbs", {
         manga: response,
+        isLogged
       });
     })
     .catch((error) => {
@@ -207,7 +271,7 @@ router.get("/generos", (req, res, next) => {
 });
 
 //RUTA para los detalles-genero
-router.get("/detalles-genero/:generoID", (req, res, next) => {
+router.get("/detalles-genero/:generoID", isLoggedIn, (req, res, next) => {
   let genero = req.params.genre;
   console.log(genero);
 
@@ -229,7 +293,7 @@ router.get("/detalles-genero/:generoID", (req, res, next) => {
 // ----------------------------------------------------------------
 
 //Ruta para todos los mangas------>POR COMODIDAD ESTA AQUI PERO HAY QUE BORRARLO, DEJAMOS EL DE ARRIBA SOLO
-router.get("/mangas", (req, res, next) => {
+router.get("/mangas", isLoggedIn, (req, res, next) => {
   Manga.find()
     .select({ title: 1, image: 1 })
 

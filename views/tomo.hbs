@@ -16,7 +16,42 @@
         <h4>{{this.manga.description}}</h4>
         <h4>{{this.manga.author}}</h4>
         <h4>{{this.manga.genre}}</h4>
-      <img src="{{this.manga.image}}" alt="imagen tomo">
+        <img src="{{this.manga.image}}" alt="imagen tomo">
 
+        <div style="display: flex; gap: 1em; align-items: center">
+          {{#if this.liked}}
+            <form action="/{{this.manga._id}}/dislike" method="post">
+              <button type="submit">Dislike</button>
+            </form>
+          {{else}}
+            <form action="/{{this.manga._id}}/like" method="post">
+              <button type="submit">Like</button>
+            </form>
+          {{/if}}
+          <p>{{this.likesCounter}} likes</p>
+        </div>
+
+        
+          
+    </div>
+
+    <div>
+      <h3>COMENTARIOS</h3>
+
+      <div>
+        <form action="/{{this.manga._id}}/comment" method="post" style="display: flex; align-items: center; gap: 1em;">
+          <label for="comentario">Deja un comentario</label>
+          <textarea type="text"  cols="30" rows="1" id="comentario" name="comentario"></textarea>
+          <button type="submit">Comentar</button>
+        </form>
+      </div>
+
+      {{#each comentarios}}
+        <div style="display: flex; gap: 1em">
+          <p>{{ this.user.username }}</p>
+          <p>{{this.text}}</p>
+          <p>{{this.createdAt}}</p>
+        </div>
+      {{/each}}
     </div>
 </div>
