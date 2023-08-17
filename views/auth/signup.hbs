@@ -4,20 +4,20 @@
 
   <form action="/auth/signup" method="post">
 
-    <label for="username">Nombre</label>
-    <input type="text" name="username">
+    <div id="nombreusuario">
+      <label for="username">Nombre</label>
+      <input type="text" name="username">
+    </div>
 
-    <br>
+    <div id="correo">
+      <label for="email">Correo Electronico</label>
+      <input type="email" name="email"> 
+    </div>
 
-    <label for="email">Correo Electronico</label>
-    <input type="email" name="email">
-
-    <br>
-
-    <label for="password">Contraseña</label>
-    <input type="password" name="password">
-
-    <br>
+    <div id="contraseña">
+      <label for="password">Contraseña</label>
+      <input type="password" name="password">
+    </div>
 
     <button>Registro</button>
 

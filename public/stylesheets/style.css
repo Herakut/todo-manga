@@ -84,7 +84,7 @@ header {
 nav {
   display: flex;
   justify-content: space-around;
-  width: 70%;
+  align-items: center;
   margin: auto;
   padding: 1em 0;
 }
@@ -186,3 +186,217 @@ footer {
 }
 
 
+#search-container form input {
+  height: 25px;
+}
+
+#search-container form {
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+#secciones {
+  display: flex;
+  align-items: center;
+}
+
+#iniciar-sesion-container,
+#registrarte-container,
+#modificar-manga-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+  padding: 2em;
+}
+
+#iniciar-sesion-container form,
+#registrarte-container form,
+#modificar-manga-container form {
+  padding: 1em;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+#iniciar-sesion-container form #correo-electronico,
+#iniciar-sesion-container form #contraseña,
+#registrarte-container form #nombreusuario,
+#registrarte-container form #correo,
+#registrarte-container form #contraseña,
+#modificar-manga-container form #titulo,
+#modificar-manga-container form #volumen,
+#modificar-manga-container form #coleccion,
+#modificar-manga-container form #descripcion,
+#modificar-manga-container form #autor,
+#modificar-manga-container form #genre,
+#modificar-manga-container form #imagen {
+  display: flex;
+  flex-direction: column;
+}
+
+
+#iniciar-sesion-container form #correo-electronico input,
+#iniciar-sesion-container form #contraseña input,
+#registrarte-container form #nombreusuario input,
+#registrarte-container form #correo input,
+#registrarte-container form #contraseña input,
+#modificar-manga-container form #titulo input,
+#modificar-manga-container form #volumen input,
+#modificar-manga-container form #coleccion input,
+#modificar-manga-container form #descripcion input,
+#modificar-manga-container form #autor input,
+#modificar-manga-container form #genre input,
+#modificar-manga-container form #imagen input {
+  outline: none;
+  padding: 0.2em 1em;
+}
+
+#iniciar-sesion-container form #correo-electronico input:focus,
+#iniciar-sesion-container form #contraseña input:focus,
+#registrarte-container form #nombreusuario input:focus,
+#registrarte-container form #correo input:focus,
+#registrarte-container form #contraseña input:focus,
+#modificar-manga-container form #titulo input:focus,
+#modificar-manga-container form #volumen input:focus,
+#modificar-manga-container form #coleccion input:focus,
+#modificar-manga-container form #descripcion input:focus,
+#modificar-manga-container form #autor input:focus,
+#modificar-manga-container form #genre input:focus,
+#modificar-manga-container form #imagen input:focus {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+#iniciar-sesion-container form button,
+#registrarte-container form button,
+#modificar-manga-container form button {
+  background: #000000;
+  color: #ffffff;
+  padding: 0.5em 1em;
+  width: fit-content;
+  transition: 0.2s;
+  margin: auto;
+  border-radius: 1em;
+}
+
+#iniciar-sesion-container form button:hover,
+#registrarte-container form button:hover,
+#modificar-manga-container form button:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* style="display: grid; gap: 1em; grid-template-columns: repeat(4, 1fr); place-items: center; " */
+
+
+#mangas-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+}
+
+#mangas-container #mangas {
+  display: grid; 
+  gap: 1em; 
+  grid-template-columns: repeat(4, 1fr); 
+  place-items: center;
+}
+
+#mangas-container #mangas .manga {
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+}
+
+
+
+#likes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#likes button {
+  padding: 0.5em 1em;
+}
+
+#dislike {
+  background-color: #0056b3;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#like {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: bold;
+}
+
+#acciones-manga {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#acciones-manga #actualizar-manga,
+#acciones-manga #borrar-manga {
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border: 1px solid #000000;
+}
+
+#actualizar-manga {
+  color: #000000;
+}
+
+#borrar-manga {
+  background-color: #ab5858;
+  color: #ffffff;
+}
+
+
+
+#comentarios-container {
+  background-color: #333;
+  padding: 1em;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+#comentarios-container form {
+  padding: 0;
+  display: flex; 
+  align-items: center; 
+  gap: 1em;
+}
+
+#comentarios-container form textarea {
+  outline: none;
+  padding: 0.2em 1em;
+}
+
+#comentarios-container form button {
+  background: #000000;
+  color: #ffffff;
+  padding: 0.5em 1em;
+  width: fit-content;
+  transition: 0.2s;
+  border-radius: 1em;
+}
+
+#comentarios-container form button:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #000000;
+}

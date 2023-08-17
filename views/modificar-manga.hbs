@@ -1,54 +1,56 @@
-<h1>Estas editando {{this.manga.title}}</h1>
+<div id="modificar-manga-container">
+    <h1>Estas editando {{this.manga.title}}</h1>
 
-<form action="/{{this.manga._id}}/modificar-manga" method="post">
-    <label for="title">Título</label>
-    <input type="text" name="title" value="{{this.manga.title}}">
+    <form action="/{{this.manga._id}}/modificar-manga" method="post">
+        <div id="titulo">
+            <label for="title">Título</label>
+            <input type="text" name="title" value="{{this.manga.title}}">
+        </div>
 
-    <br>
+        <div id="volumen">
+            <label for="numVolume">Número de volumen</label>
+            <input type="text" name="numVolume" value="{{this.manga.numVolume}}">
+        </div>
 
-    <label for="numVolume">Número de volumen</label>
-    <input type="text" name="numVolume" value="{{this.manga.numVolume}}">
+        <div id="colleccion">
+            <label for="collectionType">Selecciona una colección</label>
+            <select name="collectionType" id="collectionType">
+                <option value="Dragon Ball">Dragon Ball</option>
+                <option value="Ultra Maniac">Ultra Maniac</option>
+                <option value="Berserk">Berserk</option>
+                <option value="Doraemon">Doraemon</option>
+            </select>
+        </div>
 
-    <br>
+        <div id="descripcion">
+             <label for="description">Descripcion</label>
+            <textarea name="description" id="description" cols="30" rows="10">{{this.manga.description}}</textarea>
+        </div>
 
-    <label for="collectionType">Selecciona una colección</label>
-    <select name="collectionType" id="collectionType">
-        <option value="Dragon Ball">Dragon Ball</option>
-        <option value="Ultra Maniac">Ultra Maniac</option>
-        <option value="Berserk">Berserk</option>
-        <option value="Doraemon">Doraemon</option>
-    </select>
+        <div id="autor">
+            <label for="author">Autor</label>
+            <input type="text" id="author" name="author" value="{{this.manga.author}}">
+        </div>
 
-    <br>
+        <div id="genre">
+            <label for="genre">Selecciona un género</label>
+            <select name="genre" id="genre">
+                <option value="Kodomo">Kodomo</option>
+                <option value="Seinen">Seinen</option>
+                <option value="Shojo">Shojo</option>
+                <option value="Shonen">Shonen</option>
+            </select>
+        </div>
 
-    <label for="description">Descripcion</label>
-    <textarea name="description" id="description" cols="30" rows="10">{{this.manga.description}}</textarea>
+        <div id="imagen">
+            <label for="image">Ruta a la imagen de portada</label>
+            <input type="text" name="image" value="{{this.manga.image}}">
+        </div>
 
-    <br>
+        <button>Actualizar manga</button>
 
-    <label for="author">Autor</label>
-    <input type="text" id="author" name="author" value="{{this.manga.author}}">
-
-    <br>
-
-    <label for="genre">Selecciona un género</label>
-    <select name="genre" id="genre">
-        <option value="Kodomo">Kodomo</option>
-        <option value="Seinen">Seinen</option>
-        <option value="Shojo">Shojo</option>
-        <option value="Shonen">Shonen</option>
-    </select>
-
-    <br>
-
-    <label for="image">Ruta a la imagen de portada</label>
-    <input type="text" name="image" value="{{this.manga.image}}">
-
-    <button>Actualizar manga</button>
-
-    {{#if this.errorMessage}} 
-      <p>{{this.errorMessage}}</p>
-    {{/if}}
-
-
-</form>
+        {{#if this.errorMessage}} 
+            <p>{{this.errorMessage}}</p>
+        {{/if}}
+    </form>
+</div>

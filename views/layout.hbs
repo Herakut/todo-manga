@@ -10,9 +10,9 @@
    </head>
 
    <body>
-      <nav style="display: flex; justify-content: space-around; width: 70%; margin: auto auto 2em auto">
-        <div>
-          <a href="/">Inicio</a>
+      <nav>
+        <div id="secciones">
+          <a href="/"><img src="/images/logo.jpg" height="40" alt=""></a>
           <a href="/collections">Collections</a>
           <a href="/mangas">Mangas</a>
           <a href="/generos">Generos</a>
@@ -20,6 +20,14 @@
             <a href="/subir-manga">Subir manga</a>
           {{/if}}
         </div>
+
+        <div id="search-container">
+          <form action="/search">
+            <button><img src="/images/search-icon.png" width="20" height="20" alt=""></button>
+            <input type="text" name="search" />
+          </form>
+        </div>
+
         <div>
           {{#if this.isLogged}}
             <a href="/profile">Profile</a>
@@ -32,11 +40,7 @@
       </nav>
 
       
-    </div>
-    <form action="/search">
-    <input type="text" name="search" />
-    <button>Buscar manga</button>
-    </form>
+    
 
       {{{body}}}
 

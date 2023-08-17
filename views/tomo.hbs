@@ -1,13 +1,4 @@
 <div>
-  <h2>TOMOOOOOOOOOOOOOOO individualizado</h2>
-
-  {{#if this.isAdmin}}
-    <a href="/{{this.manga._id}}/modificar-manga">Actualizar manga</a>
-    <form action="/{{this.manga._id}}/borrar-manga" method="post">
-        <button type="submit">Borrar manga</button>
-    </form>
-    {{/if}}
-    {{!-- <a href="/{{this.manga._id}}/borrar-manga">Borrar manga</a> --}}
     
     <div>
       <div class="manga-card">
@@ -18,43 +9,50 @@
         <h4>{{this.manga.author}}</h4>
         <h4>{{this.manga.genre}}</h4>
         <img src="{{this.manga.image}}" alt="imagen tomo">
-      </div>
-      
-        <div style="display: flex; gap: 1em; align-items: center">
+
+
+        <div id="likes">
           {{#if this.liked}}
             <form action="/{{this.manga._id}}/dislike" method="post">
-              <button type="submit">Dislike</button>
+              <button type="submit" id="dislike">Dislike</button>
             </form>
-          {{else}}
+            {{else}}
             <form action="/{{this.manga._id}}/like" method="post">
-              <button type="submit">Like</button>
+              <button type="submit" id="like">Like</button>
             </form>
           {{/if}}
           <p>{{this.likesCounter}} likes</p>
         </div>
 
-        
-          
-    </div>
+        <div id="acciones-manga">
+          {{#if this.isAdmin}}
+            <a href="/{{this.manga._id}}/modificar-manga" id="actualizar-manga">Actualizar manga</a>
+            <form action="/{{this.manga._id}}/borrar-manga" method="post">
+                <button type="submit" id="borrar-manga">Borrar manga</button>
+            </form>
+          {{/if}}
+        </div>
+      </div>
+      
+      <div id="comentarios-container">
+        <h3>COMENTARIOS</h3>
 
-    <div>
-      <h3>COMENTARIOS</h3>
-
-      <div>
-        <form action="/{{this.manga._id}}/comment" method="post" style="display: flex; align-items: center; gap: 1em;">
+        <form action="/{{this.manga._id}}/comment" method="post">
           <label for="comentario">Deja un comentario</label>
           <textarea type="text"  cols="30" rows="1" id="comentario" name="comentario"></textarea>
           <button type="submit">Comentar</button>
         </form>
-      </div>
 
-      {{#each comentarios}}
-        <div style="display: flex; gap: 1em">
-          <p>{{ this.user.username }}</p>
-          <p>{{this.text}}</p>
-          <p>{{this.createdAt}}</p>
+        <div id="comentarios">
+          {{#each comentarios}}
+            <div style="display: flex; gap: 1em">
+              <p>{{ this.user.username }}</p>
+              <p>{{this.text}}</p>
+              <p>{{this.createdAt}}</p>
+            </div>
+          {{/each}}
         </div>
-      {{/each}}
+      </div>
     </div>
 
     <div>

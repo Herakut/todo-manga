@@ -149,11 +149,7 @@ router.post(
   }
 );
 
-router.post(
-  "/:mangaId/borrar-manga",
-  isLoggedIn,
-  isAdmin,
-  async (req, res, next) => {
+router.post("/:mangaId/borrar-manga", isLoggedIn, isAdmin, async (req, res, next) => {
     await Manga.findByIdAndDelete(req.params.mangaId);
     res.redirect("/mangas");
   }
