@@ -1,51 +1,53 @@
-<div>
-
+<div id="subir-manga-container">
   <h3>Formulario para subir un manga</h3>
 
   <form action="/subir-manga" method="post">
+    <div id="titulo-volumen">
+      <div id="titulo">
+        <label for="title">Título</label>
+        <input type="text" name="title">
+      </div>
 
-    <label for="title">Título</label>
-    <input type="text" name="title">
+      <div id="volumen">
+        <label for="numVolume">Número de volumen</label>
+        <input type="text" name="numVolume">
+      </div>
+    </div>
 
-    <br>
+    <div>
+      <label for="collectionType">Selecciona una colección</label>
+      <select name="collectionType" id="collectionType">
+          <option value="Dragon Ball">Dragon Ball</option>
+          <option value="Ultra Maniac">Ultra Maniac</option>
+          <option value="Berserk">Berserk</option>
+          <option value="Doraemon">Doraemon</option>
+      </select>
+    </div>
 
-    <label for="numVolume">Número de volumen</label>
-    <input type="text" name="numVolume">
+    <div id="descripcion">
+      <label for="description">Descripcion</label>
+      <textarea name="description" id="description" cols="30" rows="10"></textarea>
+    </div>
 
-    <br>
+    <div>
+      <label for="author">Autor</label>
+      <input type="text" id="author" name="author">
+    </div>
 
-    <label for="collectionType">Selecciona una colección</label>
-    <select name="collectionType" id="collectionType">
-        <option value="Dragon Ball">Dragon Ball</option>
-        <option value="Ultra Maniac">Ultra Maniac</option>
-        <option value="Berserk">Berserk</option>
-        <option value="Doraemon">Doraemon</option>
-    </select>
+    <div>
+        <label for="genre">Selecciona un género</label>
+        <select name="genre" id="genre">
+            <option value="Kodomo">Kodomo</option>
+            <option value="Seinen">Seinen</option>
+            <option value="Shojo">Shojo</option>
+            <option value="Shonen">Shonen</option>
+        </select>
+    </div>
 
-    <br>
-
-    <label for="description">Descripcion</label>
-    <textarea name="description" id="description" cols="30" rows="10"></textarea>
-
-    <br>
-
-    <label for="author">Autor</label>
-    <input type="text" id="author" name="author">
-
-    <br>
-
-    <label for="genre">Selecciona un género</label>
-    <select name="genre" id="genre">
-        <option value="Kodomo">Kodomo</option>
-        <option value="Seinen">Seinen</option>
-        <option value="Shojo">Shojo</option>
-        <option value="Shonen">Shonen</option>
-    </select>
-
-    <br>
-
-    <label for="image">Ruta a la imagen de portada</label>
-    <input type="text" name="image">
+    <div>
+      <label for="image">Ruta a la imagen de portada</label>
+      <input type="text" name="image">
+    </div>
 
     <button>Subir manga</button>
 
@@ -53,6 +55,4 @@
       <p>{{this.errorMessage}}</p>
     {{/if}}
   </form>
-
-
 </div>

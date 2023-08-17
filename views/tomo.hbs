@@ -5,9 +5,10 @@
     <a href="/{{this.manga._id}}/modificar-manga">Actualizar manga</a>
     <form action="/{{this.manga._id}}/borrar-manga" method="post">
         <button type="submit">Borrar manga</button>
+    </form>
     {{/if}}
     {{!-- <a href="/{{this.manga._id}}/borrar-manga">Borrar manga</a> --}}
-
+    
     <div>
         <h4>{{this.manga.title}}</h4>
         <h4>{{this.manga.numVolume}}</h4>
@@ -37,19 +38,6 @@
     <div>
       <h3>COMENTARIOS</h3>
 
-  <div>
-    
-  {{#each this.objetosAleatorios}}
-  <a href="/mangas/{{this._id}}">  
-  
-    <button>
-      <h4>{{this.title}}</h4>
-      <img src="{{this.image}}" alt="imagen tomo" />
-    </button>
-  </a>
-
-  {{/each}}
-  </div>
       <div>
         <form action="/{{this.manga._id}}/comment" method="post" style="display: flex; align-items: center; gap: 1em;">
           <label for="comentario">Deja un comentario</label>
@@ -65,5 +53,19 @@
           <p>{{this.createdAt}}</p>
         </div>
       {{/each}}
+    </div>
+
+    <div>
+      <h3>SUGERENCIAS</h3>
+      <div style="display: grid; gap: 1em; grid-template-columns: repeat(3, 1fr); place-items: center">
+        {{#each this.objetosAleatorios}} 
+        <a href="/mangas/{{this._id}}">  
+          <button>
+            <h4>{{this.title}}</h4>
+            <img src="{{this.image}}" width="250" height="300" alt="imagen tomo" />
+          </button>
+        </a>
+        {{/each}}
+      </div>
     </div>
 </div>
