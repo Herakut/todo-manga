@@ -68,11 +68,13 @@ body {
 header, nav, footer {
   background-color: #333;
   color: white;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 header {
   padding: 1em;
   text-align: center;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 nav {
@@ -110,11 +112,73 @@ footer {
   color: white; 
   text-align: center;
   padding: 20px; 
+  
 }
 .patata{
   background-color: white;
-  border: 1px solid #000000;
+  border-radius: 10px;
   padding: 0.5em;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+.manga-card {
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.manga-card h4 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.manga-card img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+.genre-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.genre-container h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.genre-container img {
+  display: block;
+  max-width: 850px;
+  height: 638px;
+  margin: 0 auto;
+}
+
+.genre-container p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.genre-container a {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+.genre-container a:hover {
+  background-color: #0056b3;
 }
 
 

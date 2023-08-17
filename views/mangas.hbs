@@ -2,13 +2,14 @@
     <h1>MANGAS</h1>
     <h1>Todos nuestros mangas disponibles aqui!</h1>
     <div style="display: grid; gap: 1em; grid-template-columns: repeat(4, 1fr); place-items: center; "> 
+        <div  class="patata">
         {{#each this.mangaTitle}}
         <a href="/mangas/{{this._id}}">
 
         <li>{{this.title}}
         <img src="{{this.image}}" alt="imagen tomo">  </li>
         </a>
-    
+    </div>
     
     {{/each}}
     
