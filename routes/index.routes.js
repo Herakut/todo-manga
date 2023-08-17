@@ -333,16 +333,27 @@ router.get("/mangas/:mangaId", isLoggedIn, async (req, res, next) => {
 
     const objetosAleatorios = [];
     const availableIndices = [...Array(allMangabyGenreArray.length).keys()];
-
-    while (objetosAleatorios.length < 3 && availableIndices.length > 0) {
-      const indiceAleatorioIndex = Math.floor(Math.random() * availableIndices.length);
-      const indiceAleatorio = availableIndices[indiceAleatorioIndex];
-
-      objetosAleatorios.push(allMangabyGenreArray[indiceAleatorio]);
-      availableIndices.splice(indiceAleatorioIndex, 1);
+    
+    function getRandomUniqueIndex(availableIndices) {
+      const randomIndex = Math.floor(Math.random() * availableIndices.length);
+      const randomUniqueIndex = availableIndices[randomIndex];
+      availableIndices.splice(randomIndex, 1); // Eliminamos el índice seleccionado
+      return randomUniqueIndex;
     }
-
+    
+    while (objetosAleatorios.length < 3 && availableIndices.length > 0) {
+      const indiceAleatorio = getRandomUniqueIndex(availableIndices);
+      objetosAleatorios.push(allMangabyGenreArray[indiceAleatorio]);
+    }
+    
     console.log(objetosAleatorios);
+   
+    
+    
+    
+    
+    
+    
 
     res.render("tomo.hbs", {
       manga: mangaResponse,
@@ -432,7 +443,8 @@ router.get("/generos", isLoggedIn, (req, res, next) => {
 
 //RUTA para los detalles-genero
 router.get("/detalles-genero/:generoID", isLoggedIn, (req, res, next) => {
-  let genero = req.params.genre;
+  let genero = req.params.generoID;
+  let isLogged = true;
   console.log(genero);
 
   Manga.find({ genre: genero })
@@ -440,6 +452,8 @@ router.get("/detalles-genero/:generoID", isLoggedIn, (req, res, next) => {
       console.log(response);
       res.render("genero-details.hbs", {
         manga: response,
+        isLogged
+        
       });
     })
     .catch((error) => {
