@@ -3,8 +3,10 @@
 
   {{#if this.isAdmin}}
     <a href="/{{this.manga._id}}/modificar-manga">Actualizar manga</a>
-    <a href="/{{this.manga._id}}/borrar-manga">Borrar manga</a>
+    <form action="/{{this.manga._id}}/borrar-manga" method="post">
+        <button type="submit">Borrar manga</button>
     {{/if}}
+    {{!-- <a href="/{{this.manga._id}}/borrar-manga">Borrar manga</a> --}}
 
     <div>
         <h4>{{this.manga.title}}</h4>
