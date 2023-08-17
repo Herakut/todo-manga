@@ -297,6 +297,60 @@ const seinen=[
         genre:"Seinen",
         image:"https://m.media-amazon.com/images/I/21ufGOybmhL._SX352_BO1,204,203,200_.jpg"
     },
+    {
+        title:"Akira nº1",
+        author:" Katsuhiro Otomo",
+        numVolume: 1,
+        collectionType:"Akira",
+        description:"¡Vuelve el clásico de Katsuhiro o tomo en su edición original! En la hostil y caótica megalópolis de neo Tokyo, la vida de tetsuo y sus compañeros cambiar para siempre al verse envueltos en el enigma de Akira y el terrible secreto que esconde. La edición definitiva de una obra maestra del cómic japonés -y también mundial- que no debe faltar en la estantes de cualquier aficionado al cómic en general.",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/51yvuaBGElL._SX353_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Akira nº2",
+        author:" Katsuhiro Otomo",
+        numVolume: 2,
+        collectionType:"Akira",
+        description:"Tetsuo y Kaneda se van adentrando cada vez más en el misterio de Akira por pura casualidad, unos pandilleros se ven envueltos en uno de los secretos mejor guardados del gobierno: unos experimental que, con el objetivo de hacer evolucionar a la raza humana, han creado unos seres con poderes especiales… que a veces no pueden controlar. Y el más especial de todos ellos duerme bajo el cráter de Tokio...",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/51tcL+aKlhL._SY344_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Akira nº3",
+        author:" Katsuhiro Otomo",
+        numVolume: 3,
+        collectionType:"Akira",
+        description:"¡Akira ha despertado! Presas del pánico, las autoridades de neo-tokio decretan el Estado de alarma y la ciudad se sumerge en el caos. Por otra parte, kaneda y Kei tienen a Akira bajo su cuidado y se ocultan con chiyoko, una proveedora de armas terrorista. Mientras tanto, el gobierno planea culpar al coronel del incidente en el laboratorio, pero él no está dispuesto a esperar mientras el ser más peligroso de la historia anda suelto y decide tomar se la justicia por su mano...",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/51TRCaG1p+L._SX362_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Akira nº4",
+        author:" Katsuhiro Otomo",
+        numVolume: 4,
+        collectionType:"Akira",
+        description:"¡LA EDICIÓN DEFINITIVA DE ESTE CLÁSICO DE KATSUHIRO OTOMO! La devastada Neo-Tokio es ahora un campo de batalla dividi- do en dos facciones, la zona controlada por los seguidores de Akira y Tetsuo y el área controlada por Miyako, la misteriosa líder de la secta. Pero ellos no son los únicos jugadores en este tablero, ya que hay que contar con Kei y la señora, el coronel y ahora, además, con espías de otras potencias internacionales que intentan desentrañar el misterio que es Akira...",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/41GYeVkpMNL._SX352_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Akira nº5",
+        author:" Katsuhiro Otomo",
+        numVolume: 5,
+        collectionType:"Akira",
+        description:"¡LOS SUCESOS SE PRECIPITAN EN NEOTOKIO!uevos jugadores entran en escena: aparte de los seguidores de Akira yetsuo, y el grupo liderado por Miyako, un equipo de las fuerzas especialesorteamericanas se infiltran en la zona mientras un grupo formado por los mejores científicos del mundo intenta desentrañar el misterio y los ver-aderos poderes de Akira... y evitar, si aún están a tiempo, una catástrofe todavía mayor.",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/41Vl8iECG9L._SX248_BO1,204,203,200_.jpg"
+    },
+    {
+        title:"Akira nº6",
+        author:" Katsuhiro Otomo",
+        numVolume: 6,
+        collectionType:"Akira",
+        description:"ÚLTIMO VOLUMEN DE ESTE CLÁSICOODERNO DEL MANGA ¡CON SET DEOSTALES DE REGALO!etsuo ha destrozado la superficie de la Luna por puro placer y su locura aumenta a la par que sus poderes. Además, estáerdiendo el control de la energía inconmensurable que habitan su interior y, poco a poco, se está convirtiendo en unonstruo sin precedentes. Ahora el destino de la Tierra yaceen las manos de los humanos... y en la mente de un niño. ¡Llegal desenlace del clásico de Katsuhiro Otomo!",
+        genre:"Seinen",
+        image:"https://m.media-amazon.com/images/I/51fqB1AbjyS._SX353_BO1,204,203,200_.jpg"
+    },
 
 
 

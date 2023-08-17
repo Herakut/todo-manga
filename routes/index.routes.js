@@ -91,26 +91,33 @@ router.get("/profile", isLoggedIn, (req, res) => {
 
 router.get("/", (req, res, next) => {
   let isLogged = false;
-
   if (req.session.user !== undefined) {
     isLogged = true;
   }
-
+  let objetosSeleccionados
+  Manga.find()
+  .then((response)=>{
+    if (response.length <= 18) {
+      objetosSeleccionados= response;
+    } else { 
+      objetosSeleccionados =[]  
+      while (objetosSeleccionados.length < 18) {
+        const indiceAleatorio = Math.floor(Math.random() * response.length);
+        const objetoSeleccionado = response[indiceAleatorio];
+        objetosSeleccionados.push(objetoSeleccionado);
+      }      
+  }
   res.render("index", {
     isLogged,
+    objetosSeleccionados,
   });
+  })
+  .catch((error)=>{
+    next(error)
+  })
+
 });
-// Manga.find({collectionType})
-//   .then((allRandom)=>{{
-//   if (allRandom.length <= 18) {    
-//   } else {
-//     const objetosSeleccionados = [];
-//     while (objetosSeleccionados.length < 18) {
-//       const indiceRandom = Math.floor(Math.random() * allRandom.length);
-//       const objetoSeleccionado = allRandom.splice(indiceRandom, 1)[0];
-//       objetosSeleccionados.push(objetoSeleccionado);
-//     }    
-//   }
+
 
 
 
@@ -187,14 +194,20 @@ router.post(
 // -------------------------------------------------------------------------------
 // Daniel
 
-//Ruta collection
-//quiero mostrar 4 cartas, uno por cada genero. Cada carta me lleva a una
-//vista con todos los comics que compartan genero
-router.get("/collections", (req, res, next) => {
-    res.render("collections.hbs");
+//Ruta collections(donde se muestran las cartas de las series)
+
+router.get("/collections", (req, res, next) => {  
+  Manga.find({ numVolume: 1})
+  .then((response)=>{ 
+   
+    console.log(response)   
+    res.render("collections.hbs",{collectionSeries: response});
+  })
+  .catch((error)=>{
+    next(error)
+  });
 })
 
- 
 
   
 
@@ -224,30 +237,36 @@ router.get("/mangas/:mangaId", (req, res, next) => {
   }
 
   Manga.findById(mangaId)
-    .then((response) => {
-      // console.log(response);
+  .then((response) => {
       Manga.find({ genre: response.genre })
-      .then((allMangabyGenreArray) => {
-          const objetosAleatorios = [];
-          while (objetosAleatorios.length < 3) {
-            const indiceAleatorio = Math.floor(Math.random() * allMangabyGenreArray.length);
-            const objetoAleatorio = allMangabyGenreArray[indiceAleatorio];
-            objetosAleatorios.push(objetoAleatorio);           
-          }
-          console.log(objetosAleatorios)
+          .then((allMangabyGenreArray) => {
+              const objetosAleatorios = [];
+              const availableIndices = [...Array(allMangabyGenreArray.length).keys()];
 
-        res.render("tomo.hbs", {
-          manga: response,
-          isAdmin,
-          isLogged,
-          objetosAleatorios,
+              while (objetosAleatorios.length < 3 && availableIndices.length > 0) {
+                  const indiceAleatorioIndex = Math.floor(Math.random() * availableIndices.length);
+                  const indiceAleatorio = availableIndices[indiceAleatorioIndex];
 
-        });
-      });
-    })
-    .catch((error) => {
+                  objetosAleatorios.push(allMangabyGenreArray[indiceAleatorio]);
+                  availableIndices.splice(indiceAleatorioIndex, 1);
+              }
+
+              console.log(objetosAleatorios);
+
+              res.render("tomo.hbs", {
+                  manga: response,
+                  isAdmin,
+                  isLogged,
+                  objetosAleatorios,
+              });
+          })
+          .catch((error) => {
+              next(error);
+          });
+  })
+  .catch((error) => {
       next(error);
-    });
+  });
 });
 
 //Ruta del buscador
