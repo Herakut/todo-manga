@@ -28,7 +28,7 @@ router.get("/subir-manga", isLoggedIn, isAdmin, (req, res) => {
 
 //Ruta para poder subir un manga
 router.post("/subir-manga", isLoggedIn, isAdmin, async (req, res) => {
-  let isLogged = true;
+ 
   const {
     title,
     numVolume,
@@ -48,7 +48,7 @@ router.post("/subir-manga", isLoggedIn, isAdmin, async (req, res) => {
     !genre ||
     !image
   ) {
-    res.status(400).render("/subir-manga.hbs", {
+    res.status(400).render("subir-manga.hbs", {
       errorMessage: "Todos los campos deben estar llenos",
     });
     return;
@@ -64,7 +64,7 @@ router.post("/subir-manga", isLoggedIn, isAdmin, async (req, res) => {
     image: image,
   });
 
-  res.redirect("/mangas", { isLogged });
+  res.redirect("/mangas");
 });
 
 // Ruta del perfil de usuario
