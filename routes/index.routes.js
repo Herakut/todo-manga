@@ -91,7 +91,7 @@ router.get("/", (req, res, next) => {
   let objetosSeleccionados;
   Manga.find()
     .then((response) => {
-      if (response.length <= 18) {
+      if (response.length <= 20) {
         objetosSeleccionados = response;
       } else {
         objetosSeleccionados = [];
@@ -360,8 +360,20 @@ router.get("/mangas/:mangaId", isLoggedIn, async (req, res, next) => {
       objetosAleatorios.push(allMangabyGenreArray[indiceAleatorio]);
       availableIndices.splice(indiceAleatorioIndex, 1);
     }
-
+    
+    while (objetosAleatorios.length < 3 && availableIndices.length > 0) {
+      const indiceAleatorio = getRandomUniqueIndex(availableIndices);
+      objetosAleatorios.push(allMangabyGenreArray[indiceAleatorio]);
+    }
+    
     console.log(objetosAleatorios);
+   
+    
+    
+    
+    
+    
+    
 
     res.render("tomo.hbs", {
       manga: mangaResponse,
