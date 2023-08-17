@@ -35,6 +35,19 @@
     <div>
       <h3>COMENTARIOS</h3>
 
+  <div>
+    
+  {{#each this.objetosAleatorios}}
+  <a href="/mangas/{{this._id}}">  
+  
+    <button>
+      <h4>{{this.title}}</h4>
+      <img src="{{this.image}}" alt="imagen tomo" />
+    </button>
+  </a>
+
+  {{/each}}
+  </div>
       <div>
         <form action="/{{this.manga._id}}/comment" method="post" style="display: flex; align-items: center; gap: 1em;">
           <label for="comentario">Deja un comentario</label>
