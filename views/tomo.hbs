@@ -10,6 +10,7 @@
     {{!-- <a href="/{{this.manga._id}}/borrar-manga">Borrar manga</a> --}}
     
     <div>
+      <div>
         <h4>{{this.manga.title}}</h4>
         <h4>{{this.manga.numVolume}}</h4>
         <h4>{{this.manga.collectionType}}</h4>
@@ -17,7 +18,8 @@
         <h4>{{this.manga.author}}</h4>
         <h4>{{this.manga.genre}}</h4>
         <img src="{{this.manga.image}}" alt="imagen tomo">
-
+      </div>
+      
         <div style="display: flex; gap: 1em; align-items: center">
           {{#if this.liked}}
             <form action="/{{this.manga._id}}/dislike" method="post">

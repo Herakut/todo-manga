@@ -1,16 +1,14 @@
 <h1>COLLECTIONS</h1>
 <h3>AQUI LAS SERIES COMPLETAS</h3>
 
-
-{{#each this.collectionSeries}}
-
-<a href="/mangas/{{this._id}}">
-
-    <h4>{{this.collectionType}}</h4>
-    <h4>{{this.genre}}</h4>
-    <img src="{{this.image}}" alt="imagen tomo" />
-    </a>
- 
-   
-    
-{{/each}}
+<div  style="display: grid; gap: 1em; grid-template-columns: repeat(4, 1fr); place-items: center">
+    {{#each this.collectionSeries}}
+    <div style="border: 1px solid #000000; padding: 0.5em">
+                <h4 style="text-align: center;">{{this.collectionType}}</h4>
+                <h4 style="text-align: center;">{{this.genre}}</h4>
+        <a href="/mangas/{{this._id}}"></a>
+        <img src="{{this.image}}" alt="imagen tomo" width="250" height="300" />
+        </a>
+    </div>    
+    {{/each}}
+</div>    
