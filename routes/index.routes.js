@@ -95,7 +95,7 @@ router.get("/", (req, res, next) => {
         objetosSeleccionados = response;
       } else {
         objetosSeleccionados = [];
-        while (objetosSeleccionados.length < 18) {
+        while (objetosSeleccionados.length < 20) {
           const indiceAleatorio = Math.floor(Math.random() * response.length);
           const objetoSeleccionado = response[indiceAleatorio];
           objetosSeleccionados.push(objetoSeleccionado);
@@ -472,17 +472,27 @@ router.get("/detalles-genero/:generoID", isLoggedIn, (req, res, next) => {
 // ----------------------------------------------------------------
 
 //Ruta para todos los mangas------>POR COMODIDAD ESTA AQUI PERO HAY QUE BORRARLO, DEJAMOS EL DE ARRIBA SOLO
-router.get("/mangas", isLoggedIn, (req, res, next) => {
-  Manga.find()
-    .select({ title: 1, image: 1 })
+// router.get("/mangas", isLoggedIn, (req, res, next) => {
+//   Manga.find()
+//     .select({ title: 1, image: 1 })
 
-    .then((response) => {
-      console.log(response);
-      res.render("mangas.hbs", {
-        mangaTitle: response,
-      });
-    })
-    .catch((error) => {});
-});
+//     .then((response) => {
+//       if (response.length <= 20) {
+//         objetosSeleccionados = response;
+//       } else {
+//         objetosSeleccionados = [];
+//         while (objetosSeleccionados.length < 18) {
+//           const indiceAleatorio = Math.floor(Math.random() * response.length);
+//           const objetoSeleccionado = response[indiceAleatorio];
+//           objetosSeleccionados.push(objetoSeleccionado);
+//         }
+//       }
+//       console.log(response);
+//       res.render("mangas.hbs", {
+//         mangaTitle: response,
+//       });
+//     })
+//     .catch((error) => {});
+// });
 
 module.exports = router;
