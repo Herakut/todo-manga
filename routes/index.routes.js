@@ -91,7 +91,7 @@ router.get("/", (req, res, next) => {
   let objetosSeleccionados;
   Manga.find()
     .then((response) => {
-      if (response.length <= 18) {
+      if (response.length <= 20) {
         objetosSeleccionados = response;
       } else {
         objetosSeleccionados = [];

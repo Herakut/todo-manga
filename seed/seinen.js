@@ -338,7 +338,7 @@ const seinen=[
         author:" Katsuhiro Otomo",
         numVolume: 5,
         collectionType:"Akira",
-        description:"¡LOS SUCESOS SE PRECIPITAN EN NEOTOKIO!uevos jugadores entran en escena: aparte de los seguidores de Akira yetsuo, y el grupo liderado por Miyako, un equipo de las fuerzas especialesorteamericanas se infiltran en la zona mientras un grupo formado por los mejores científicos del mundo intenta desentrañar el misterio y los ver-aderos poderes de Akira... y evitar, si aún están a tiempo, una catástrofe todavía mayor.",
+        description:"¡LOS SUCESOS SE PRECIPITAN EN NEOTOKIO!Nuevos jugadores entran en escena: aparte de los seguidores de Akira yetsuo, y el grupo liderado por Miyako, un equipo de las fuerzas especialesorteamericanas se infiltran en la zona mientras un grupo formado por los mejores científicos del mundo intenta desentrañar el misterio y los ver-aderos poderes de Akira... y evitar, si aún están a tiempo, una catástrofe todavía mayor.",
         genre:"Seinen",
         image:"https://m.media-amazon.com/images/I/41Vl8iECG9L._SX248_BO1,204,203,200_.jpg"
     },
@@ -359,7 +359,7 @@ const mongoose = require("mongoose");
 const Manga = require("../models/Manga.model");
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/todo-manga")
+  .connect("mongodb+srv://Dcristo:platano99!@cluster0.rqiag5b.mongodb.net/todo-manga?retryWrites=true&w=majority")
   .then(() => {
     return Manga.insertMany(seinen)
   })
