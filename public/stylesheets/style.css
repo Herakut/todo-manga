@@ -8,7 +8,6 @@ body {
   background-color: #f1bf09;
 }
 
-/* SECCION DE SUBIR MANGA */
 #subir-manga-container {
   display: flex;
   flex-direction: column;
@@ -56,11 +55,6 @@ body {
 #subir-manga-container form input {
   padding: 1em;
 }
-
-
-
-
-
 
 body {
   font-family: Arial, sans-serif;
@@ -146,13 +140,6 @@ footer {
 }
 
 
-
-
-
-
-
-
-
 .genre-container {
   max-width: 800px;
   margin: 20px auto;
@@ -160,7 +147,7 @@ footer {
   border-radius: 10px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  text-align: center; /* Centrar contenido horizontalmente */
+  text-align: center; 
 }
 
 .genre-container h1 {
@@ -169,10 +156,10 @@ footer {
 }
 
 .genre-container img {
-  max-width: 100%; /* Ajustar imagen al ancho del contenedor */
-  height: auto; /* Mantener proporción de aspecto */
-  margin: 5px; /* Margen de 5px alrededor de la imagen */
-  display: inline-block; /* Permitir que el margen funcione correctamente */
+  max-width: 100%; 
+  height: auto; 
+  margin: 5px;
+  display: inline-block; 
   border-radius: 5px;
 }
 
@@ -182,7 +169,7 @@ footer {
 }
 
 .genre-container a {
-  display: inline-block; /* Evitar que el enlace ocupe todo el ancho */
+  display: inline-block; 
   text-align: center;
   margin-top: 10px;
   text-decoration: none;
@@ -195,18 +182,6 @@ footer {
 .genre-container a:hover {
   background-color: #0056b3;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 #search-container form input {
   height: 25px;
@@ -312,9 +287,6 @@ footer {
   background-color: #ffffff;
   color: #000000;
 }
-
-/* style="display: grid; gap: 1em; grid-template-columns: repeat(4, 1fr); place-items: center; " */
-
 
 #mangas-container {
   display: flex;
@@ -462,30 +434,25 @@ footer {
   margin-top:20px
 }
 
-
-
-
-
-
 .manga-card {
   width: calc(100% - 20px); 
-  margin: 10px auto; /* Añade margen vertical auto para centrar las tarjetas y espacio entre ellas */
+  margin: 10px auto; 
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  display: flex; /* Utiliza flexbox para controlar la distribución de contenido */
-  align-items: center; /* Centra verticalmente los elementos */
-  text-align: center; /* Alinea el texto a la izquierda */
+  display: flex; 
+  align-items: center; 
+  text-align: center;
 }
 
 .manga-card-div {
-  flex: 1; /* Ocupa el espacio restante en el div */
-  padding: 0 10px; /* Agrega un espacio entre la imagen y el texto */
+  flex: 1; 
+  padding: 0 10px; 
 }
 
 .manga-card h4 {
-  margin: 0; /* Elimina el margen por defecto */
-  padding: 5px 0; /* Ajusta el espaciado superior e inferior */
+  margin: 0; 
+  padding: 5px 0; 
   border-radius: 5px;
   color: rgb(0, 0, 0);
   text-align: center;

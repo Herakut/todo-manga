@@ -5,10 +5,12 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/User.model.js");
 const { isLoggedIn } = require("../middlewares/auth.middlewares.js");
 
+//Ruta signUp Auth
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup.hbs");
 });
 
+//Ruta signUP
 router.post("/signup", async (req, res, next) => {
   console.log(req.body)
   const { username, email, password } = req.body;
@@ -61,12 +63,12 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
-// GET "/auth/login" => renderiza al usuario un formulario de acceso
+//Ruta formulario
 router.get("/login", (req, res, next) => {
   res.render("auth/login.hbs");
 });
 
-// POST "/auth/login" => recibir las credenciales del usuario y validarlo/autenticarlo
+//Ruta autentificacion
 router.post("/login", async (req, res, next) => {
   console.log(req.body);
   const { email, password } = req.body;
@@ -109,6 +111,7 @@ router.post("/login", async (req, res, next) => {
   }
 });
 
+//Ruta logOut
 router.get("/logout", isLoggedIn, (req, res, next) => {
   req.session.destroy(() => {
     res.redirect("/");
