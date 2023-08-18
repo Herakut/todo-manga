@@ -144,6 +144,15 @@ footer {
   max-width: 100%;
   height: auto;
 }
+
+
+
+
+
+
+
+
+
 .genre-container {
   max-width: 800px;
   margin: 20px auto;
@@ -151,6 +160,7 @@ footer {
   border-radius: 10px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
+  text-align: center; /* Centrar contenido horizontalmente */
 }
 
 .genre-container h1 {
@@ -159,10 +169,11 @@ footer {
 }
 
 .genre-container img {
-  display: block;
-  max-width: 850px;
-  height: 638px;
-  margin: 0 auto;
+  max-width: 100%; /* Ajustar imagen al ancho del contenedor */
+  height: auto; /* Mantener proporción de aspecto */
+  margin: 5px; /* Margen de 5px alrededor de la imagen */
+  display: inline-block; /* Permitir que el margen funcione correctamente */
+  border-radius: 5px;
 }
 
 .genre-container p {
@@ -171,7 +182,7 @@ footer {
 }
 
 .genre-container a {
-  display: block;
+  display: inline-block; /* Evitar que el enlace ocupe todo el ancho */
   text-align: center;
   margin-top: 10px;
   text-decoration: none;
@@ -184,6 +195,17 @@ footer {
 .genre-container a:hover {
   background-color: #0056b3;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 #search-container form input {
@@ -399,4 +421,85 @@ footer {
   cursor: pointer;
   background-color: #ffffff;
   color: #000000;
+}
+
+
+
+.title-container {
+  background-color: #969696;
+  padding: 10px;
+  margin-bottom: 20px
+}
+
+.title-container > h1,
+.title-container > h2 {
+  margin-bottom: 20px;
+  margin-right: 10px;  
+  color: white;       
+}
+
+
+
+.manga-card.manga-card-0 {
+  width: calc(100% - 20px); 
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top:20px
+}
+
+.manga-card.manga-card-1 {
+  width: calc(100% - 20px); 
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top:20px
+}
+
+
+
+
+
+
+.manga-card {
+  width: calc(100% - 20px); 
+  margin: 10px auto; /* Añade margen vertical auto para centrar las tarjetas y espacio entre ellas */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex; /* Utiliza flexbox para controlar la distribución de contenido */
+  align-items: center; /* Centra verticalmente los elementos */
+  text-align: center; /* Alinea el texto a la izquierda */
+}
+
+.manga-card-div {
+  flex: 1; /* Ocupa el espacio restante en el div */
+  padding: 0 10px; /* Agrega un espacio entre la imagen y el texto */
+}
+
+.manga-card h4 {
+  margin: 0; /* Elimina el margen por defecto */
+  padding: 5px 0; /* Ajusta el espaciado superior e inferior */
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.manga-card img {
+  width: 40%;
+  height: auto;
+  border-radius: 10px;
+  
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.manga-card img:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }

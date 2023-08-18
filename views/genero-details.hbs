@@ -1,17 +1,21 @@
-<div>
-    <h2>GeneroDETAILS</h2> 
- 
-    <div>
-   <div>
-      {{#each this.manga}}
-        <h4>{{this.title}}</h4>
-        <h4>{{this.numVolume}}</h4>
-        <h4>{{this.collectionType}}</h4>
-        <h4>{{this.description}}</h4>
-        <h4>{{this.author}}</h4>
-        <h4>{{this.genre}}</h4>
-      <a href="/mangas/{{this._id}}"><img src="{{this.image}}" alt="imagen tomo"></a>
-      {{/each}}
+
+<div class="title-container">
+    NO TOCAR
+
+    <div class="manga-list-container">
+    {{#each this.manga}}  
+    <div class="manga-card">
+    
+        <a href="/mangas/{{this._id}}"><img src="{{this.image}}" alt="imagen tomo"></a>
+        <div class="manga-card-div">
+            <h4>Titulo: {{this.title}}</h4>
+            <h4>Numero: {{this.numVolume}}</h4>
+            <h4>Colecion: {{this.collectionType}}</h4>
+            <h4>Descripcion: {{this.description}}</h4>
+            <h4>Autor: {{this.author}}</h4>
+            <h4>Genero: {{this.genre}}</h4>
+            
+        </div>   
     </div>
-    </div>
+    {{/each}}
 </div>
